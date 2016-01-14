@@ -1,9 +1,6 @@
 \section{Architecture}\label{arch}
 \noindent This section presents the \sys architecture.
-
-\subsection{Overview}\label{sysover}
-Figure \ref{sys-arch} illustrates the \sys architecture.
-The dotted boxes describe optional components that the user can provide to improve the efficiency of the system.  
+Figure \ref{sys-arch} illustrates the \sys architecture.  
 
 \subsubsection{Required User Input}\label{uinp}
 %To use \sys, the user provides the following:
@@ -17,8 +14,6 @@ The dotted boxes describe optional components that the user can provide to impro
 \vspace{0.25em}
 
 \noindent\textbf{Batches: } Data are cleaned in batches of size $b$ and the user can change these settings if she desires more or less frequent model updates.
-The choice of $b$ does affect the convergence rate.
-Section~\ref{model-update} discusses the efficiency and convergence trade-offs of different values of $b$.
 We empirically find that a batch size of $50$ performs well across different datasets and use that as a default.
 A cleaning budget $k$ can be used as a stopping criterion once $C(\dot)$ has been called $k$ times, and so the number of iterations of \sys is $T = \frac{k}{b}$.
 Alternatively, the user can clean data until the model is of sufficient accuracy to make a decision.
