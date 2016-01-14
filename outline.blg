@@ -1,0 +1,99 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: outline.aux
+The style file: abbrv.bst
+Database file #1: ref.bib
+Repeated entry---line 1687 of file ref.bib
+ : @inproceedings{wang1999sample
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2307 of file ref.bib
+ : @inproceedings{DBLP:conf/pervasive/JefferyAFHW06
+ :                                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2387 of file ref.bib
+ : @article{DBLP:journals/pvldb/MozafariSFJM14
+ :                                            ,
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "xiaofeature"
+refers to entry "DBLP:conf/icml/2015", which doesn't exist
+A bad cross reference---entry "DBLP:conf/recsys/KrishnanPFG14"
+refers to entry "DBLP:conf/recsys/2014", which doesn't exist
+A bad cross reference---entry "mayfield2010eracer"
+refers to entry "DBLP:conf/sigmod/2010", which doesn't exist
+A bad cross reference---entry "yakout2013don"
+refers to entry "DBLP:conf/sigmod/2013", which doesn't exist
+A bad cross reference---entry "wang1999sample"
+refers to entry "DBLP:conf/sigmod/2014", which doesn't exist
+A bad cross reference---entry "bottou2012stochastic"
+refers to entry "DBLP:series/lncs/7700", which doesn't exist
+A bad cross reference---entry "zhao2014stochastic"
+refers to entry "DBLP:conf/icml/2015", which doesn't exist
+A bad cross reference---entry "feng2014robust"
+refers to entry "DBLP:conf/nips/2014", which doesn't exist
+A bad cross reference---entry "heise2014estimating"
+refers to entry "DBLP:conf/cikm/2014", which doesn't exist
+A bad cross reference---entry "DBLP:conf/sigmod/BergmanMNT15"
+refers to entry "DBLP:conf/sigmod/2015", which doesn't exist
+A bad cross reference---entry "deshpande2004model"
+refers to entry "DBLP:conf/vldb/2004", which doesn't exist
+A bad cross reference---entry "DBLP:conf/case/MahlerKLSMKPWFAG14"
+refers to entry "DBLP:conf/case/2014", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/sigmod/2014"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2015"
+Warning--I didn't find a database entry for "DBLP:conf/sigmod/2015"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2014"
+Warning--I didn't find a database entry for "DBLP:series/lncs/7700"
+Warning--I didn't find a database entry for "DBLP:conf/sigmod/2010"
+Warning--I didn't find a database entry for "DBLP:conf/vldb/2004"
+Warning--I didn't find a database entry for "DBLP:conf/case/2014"
+Warning--I didn't find a database entry for "DBLP:conf/recsys/2014"
+Warning--I didn't find a database entry for "DBLP:conf/sigmod/2013"
+Warning--I didn't find a database entry for "DBLP:conf/cikm/2014"
+Warning--to sort, need author or key in bdas
+Warning--to sort, need author or key in nytimes
+Warning--to sort, need author or key in dollarsfordocs
+Warning--to sort, need author or key in dollarsfordocsa
+Warning--empty publisher in bottou2012stochastic
+You've used 39 entries,
+            2118 wiz_defined-function locations,
+            695 strings with 10708 characters,
+and the built_in function-call counts, 11968 in all, are:
+= -- 1025
+> -- 818
+< -- 1
++ -- 332
+- -- 286
+* -- 828
+:= -- 2104
+add.period$ -- 114
+call.type$ -- 39
+change.case$ -- 259
+chr.to.int$ -- 0
+cite$ -- 44
+duplicate$ -- 436
+empty$ -- 883
+format.name$ -- 286
+if$ -- 2411
+int.to.chr$ -- 0
+int.to.str$ -- 39
+missing$ -- 34
+newline$ -- 194
+num.names$ -- 70
+pop$ -- 320
+preamble$ -- 1
+purify$ -- 221
+quote$ -- 0
+skip$ -- 294
+stack$ -- 0
+substring$ -- 208
+swap$ -- 54
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 154
+warning$ -- 5
+while$ -- 71
+width$ -- 41
+write$ -- 395
+(There were 15 error messages)

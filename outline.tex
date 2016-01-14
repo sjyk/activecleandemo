@@ -1,0 +1,193 @@
+\documentclass{sig-alternate}
+
+
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{cprotect}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{amstext}
+\usepackage{amstext}
+\usepackage{pdfpages}
+\usepackage{alltt}
+\usepackage{epstopdf}
+\usepackage{xspace,colortbl}
+\usepackage[USenglish]{babel}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{graphicx}%%
+\usepackage{amssymb}
+\usepackage{fmtcount}
+\usepackage{amsfonts}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage[mathscr]{eucal}
+%\usepackage{psfrag}
+\usepackage{colortbl}
+
+\usepackage{bm}
+\usepackage{charter}
+%\usepackage[nospace]{cite}
+\usepackage{csquotes}
+\usepackage{enumitem}
+
+\lstset{basicstyle=\large,breaklines=true,language=SQL,belowcaptionskip=.1\baselineskip}
+
+%\linespread{0.975}
+
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
+\begin{document}
+
+%\setlength{\belowdisplayskip}{1pt} \setlength{\belowdisplayshortskip}{1pt}
+%\setlength{\abovedisplayskip}{1pt} \setlength{\abovedisplayshortskip}{1pt}
+%\setlength{\belowcaptionskip}{-10pt}
+%\selectfont
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{problem}{Problem}
+\newtheorem{property}{Property}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\cond}{\textrm{pred}\xspace}
+\newcommand{\dataset}{data set\xspace}
+\newcommand{\datasets}{data sets\xspace}
+\newcommand{\spview}{\textsf{SPView}\xspace}
+\newcommand{\fjview}{\textsf{FJView}\xspace}
+\newcommand{\aggview}{\textsf{AggView}\xspace}
+\newcommand{\hashfunc}[1]{\textsf{hash}(#1)\xspace}
+\newcommand{\hashop}{\textsf{hash}\xspace}
+\newcommand{\nsc}{\textsf{NormalizedSC}\xspace}
+\newcommand{\rsc}{\textsf{RawSC}\xspace}
+
+\newcommand{\avgfunc}{\ensuremath{\texttt{avg} }\xspace}
+\newcommand{\maxfunc}{\ensuremath{\texttt{max} }\xspace}
+\newcommand{\minfunc}{\ensuremath{\texttt{min} }\xspace}
+\newcommand{\histfunc}{\ensuremath{\texttt{histogram\_numeric} }\xspace}
+\newcommand{\countfunc}{\ensuremath{\texttt{count}}\xspace}
+\newcommand{\sumfunc}{\ensuremath{\texttt{sum} }\xspace}
+\newcommand{\varfunc}{\ensuremath{\texttt{var} }\xspace}
+\newcommand{\stdfunc}{\ensuremath{\texttt{std} }\xspace}
+\newcommand{\covfunc}{\ensuremath{\texttt{cov} }\xspace}
+\newcommand{\corrfunc}{\ensuremath{\texttt{corr} }\xspace}
+\newcommand{\medfunc}{\ensuremath{\texttt{median} }\xspace}
+\newcommand{\percfunc}{\ensuremath{\texttt{percentile} }\xspace}
+\newcommand{\havingfunc}{\ensuremath{\texttt{HAVING} }\xspace}
+\newcommand{\selectfunc}{\ensuremath{\texttt{select} }\xspace}
+\newcommand{\ratio}{\ensuremath{\rho }\xspace}
+
+
+\newcommand{\insertion}{\ensuremath{\texttt{INSERT} }\xspace}
+\newcommand{\update}{\ensuremath{\texttt{UPDATE} }\xspace}
+\newcommand{\delete}{\ensuremath{\texttt{DELETE} }\xspace}
+
+\newcommand{\sysfull}{ActiveClean\xspace}
+\newcommand{\sys}{ActiveClean\xspace}
+\newcommand{\sysnospace}{ActiveClean}
+
+\newcommand{\tbl}[1]{\textsf{#1}\xspace}
+\newcommand{\field}[1]{\textsf{#1}\xspace}
+\newcommand{\cost}{\textrm{cost}\xspace}
+\newcommand{\ans}{\textsf{ans}\xspace}
+\newcommand{\dans}{\Delta\textsf{ans}\xspace}
+\newcommand{\cqp}{correction query processing\xspace}
+\newcommand{\Cqp}{Correction query processing\xspace}
+
+\newcommand{\reminder}[1]{{{\textcolor{magenta}{\{\{\bf #1\}\}}}\xspace}}
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+%\setlength{\belowcaptionskip}{-10pt}
+
+%\newcommand{\reminder}[1] {}
+\pagestyle{plain}
+
+%\title{ActiveClean: Progressive Data Cleaning For Convex Data Analytics}
+\title{ActiveClean:  }
+
+\numberofauthors{1}
+\author{\large Sanjay Krishnan, Jiannan Wang, Eugene Wu{$\,^\dag$}, Michael J. Franklin, Ken Goldberg \\
+\vspace{.2em}\affaddr{\large UC Berkeley, ~~ $^\dag$Columbia University} \\
+\vspace{.1em}\affaddr{\large \{sanjaykrishnan, jnwang, franklin, goldberg\}@berkeley.edu}\\
+\affaddr{\large ewu@cs.columbia.edu}
+}
+
+%\fontsize{9pt}{11pt}
+%\selectfont
+
+
+\maketitle
+
+\begin{abstract}
+Data cleaning is often an important step to ensure that predictive models, such as regression and classification, are not affected by errors such as inconsistent, out-of-date, or outlier data.
+%The high dimensionality of predictive models can amplify small amounts of data error leading to error-prone predictions.
+Identifying dirty data is often a manual and iterative process, and can be challenging on large datasets.
+However, many data cleaning workflows can introduce subtle biases into the training processes due to violation of independence assumptions.
+We propose \sys, a progressive cleaning approach where the model is updated incrementally instead of re-training and can guarantee accuracy on partially cleaned data.
+\sys supports a popular class of models called convex loss models (e.g., linear regression and SVMs) and record-by-record user-defined data cleaning operations.
+\sys also leverages the structure of a user's model to prioritize cleaning those records likely to affect the results.
+Evaluation on four real-world datasets suggests that for a fixed cleaning budget, \sys returns more accurate models than uniform sampling and Active Learning when corruption is systematic and sparse. 
+%The key insight of \sys is that data cleaning can be applied simultaneously with incremental optimization allowing for progressive cleaning while preserving provable properties.
+%In one set of experiments with 5\% simulated error, \sys cleans 55\% fewer records to achieve the same accuracy as an Active Learning algorithm.
+\end{abstract}
+
+\if{0}
+\begin{abstract}
+Databases are susceptible to various forms of corruption, or \emph{dirtiness}, such as missing, incorrect, or inconsistent values.
+Increasingly, modern data analysis pipelines involve Machine Learning for predictive models which can be sensitive to dirty data.
+Dirty data is often expensive to repair, and naive sampling solutions are not suited for training high dimensional models.
+In this paper, we propose \sysfull, an anytime framework for training Machine Learning models with budgeted data cleaning.
+Our framework updates a model iteratively as small samples of data are cleaned, and includes numerous optimizations such as importance weighting and dirty data detection.
+We evaluate \sys on 4 real datasets and find that our methodology can return more accurate models for a smaller cost  than alternatives such as uniform sampling and active learning.
+\end{abstract}
+\fi
+
+\setcounter{page}{1}
+
+\input{introduction.tex}
+%\input{background.tex}
+%\input{problem_statement.tex}
+\input{architecture.tex}
+%\input{naive.tex}
+%\input{sampling.tex}
+%\input{optimal.tex}
+% \input{detect.tex}
+
+% \input{impestimate.tex}
+
+%\input{optimizer.tex}
+%\input{experiments.tex}
+%\input{relatedwork.tex}
+%\input{discussion.tex}
+%\input{conclusion.tex}
+%\input{outlier.tex}
+%\input{analysis.tex}
+%\input{experiments.tex}
+%\input{conclusion.tex}\vspace{-1em}
+
+%\textbf{\small This research is supported in part by NSF CISE Expeditions Award CCF-1139158, LBNL Award 7076018, and DARPA XData Award FA8750-12-2-0331, and gifts from Amazon Web Services, Google, SAP, The Thomas and Stacey Siebel Foundation, Adatao, Adobe, Apple, Inc., Blue Goji, Bosch, C3Energy, Cisco, Cray, Cloudera, EMC2, Ericsson, Facebook, Guavus, HP, Huawei, Informatica, Intel, Microsoft, NetApp, Pivotal, Samsung, Schlumberger, Splunk, Virdata and VMware.}
+
+%\bibliographystyle{abbrv}
+%\scriptsize
+%\fontsize{7.5pt}{8.0pt} \selectfont
+%\bibliographystyle{abbrv}
+%\bibliography{ref} 
+%\normalsize \selectfont
+%\appendix
+%\input{appendix.tex}
+
+\end{document}

@@ -1,0 +1,109 @@
+\section{System Architecture}\label{arch}
+This section describes the \sys architecture and the basic algorithmic framework.
+The individual components will be addressed in the subsequent sections.
+
+\subsection{Overview}
+Figure \ref{sys-arch} in the introduction overviews the entire framework.
+The first step of \sys is \emph{initialization}.
+In this step, there is a dirty relation $R$, a data cleaning technique $C(\cdot)$, and a dirty model $\theta^{(d)}$ trained on the dirty dataset. 
+Optionally, \sys integrates with dirty data detection rules $D(\cdot)$ which selects the set of likely corrupted records from $R$.
+If one is not provided, \sys starts by treating all of the data as dirty and tries to learn a detector as data are cleaned.
+At initialization, there are two hyperparameters to set, the cleaning budget $k$ and the batch size $b$ (the number of iterations is $T = \frac{k}{b}$).
+We discuss how to set $b$ and the tradeoffs in setting a larger or smaller $b$ in Section \ref{model-update}.
+
+After initialization, \sys begins the cleaning and model update iterations.
+The \emph{sampler} selects a sample of dirty data based on the batch size.
+At this step, \sys can use the detector $D$ to narrow the sample to select only dirty data.
+Once a sample is selected, the \emph{cleaner} applies $C(\cdot)$ to the dirty sample.
+Then, after the sample is cleaned, the current model is updated by the \emph{updater}.
+\sys is initialized with the dirty model, and this model is iteratively updated as more batched are cleaned.
+
+The next two steps in the architecture are feedback steps where the sampling distribution is updated for the next iteration.
+The \emph{estimator} uses previously cleaned data to estimate the value of data cleaning on new records.
+This information is used to guide sampling towards more valuable records.
+After estimation, the detector $D(\cdot)$ is also updated based on cleaned data.
+After all of the iterations are complete, the system returns the updated model.
+
+To summarize the architecture in pseudocode:
+\begin{enumerate}[leftmargin=1em]\scriptsize\sloppy
+\item \texttt{Init(dirty\_data, cleaned\_data, dirty\_model, batch, iter)}
+\item For each t in $\{1,...,T\}$
+\begin{enumerate}
+	\item \texttt{dirty\_sample $=$ Sampler(dirty\_data, sample\_prob, detector, batch)}
+	\item \texttt{clean\_sample $=$ Cleaner(dirty\_sample)}
+	\item \texttt{current\_model $=$ Updater(current\_model, sample\_prob, clean\_sample)}
+	\item \texttt{cleaned\_data = cleaned\_data + clean\_sample}
+	\item \texttt{dirty\_data = dirty\_data - clean\_sample}
+	\item \texttt{sample\_prob $=$ Estimator(dirty\_data, cleaned\_data, detector)}
+	\item \texttt{detector $=$ DetectorUpdater(detector, cleaned\_data)}
+\end{enumerate}
+\item \texttt{Output: current\_model}
+\end{enumerate}
+
+Here is an example application of \sys:
+\begin{example}
+The analyst first trains an SVM model on the dirty data ignoring the effects of the errors returning a model $\theta^{(d)}$.
+She decides that she has a budget of cleaning $100$ records, and decides to clean the 100 records in batches of 10 (set based on how fast she can clean the data, and how often she wants to see an updated result).
+She initializes \sys with $\theta^{(d)}$.
+\sys samples an initial batch of 10 records.
+She manually cleans those records by merging similar drug names, making corporation names consistent, and fixing incorrect labels.
+After each batch, the model is updated with the most recent cleaning results $\theta^{(t)}$.
+The model improves after each iteration.
+After $t=10$ of cleaning, the analyst has an accurate model trained with 100 cleaned records but still utilizes the entire dirty data.
+\end{example}
+
+\subsection{Challenges and Formalization}
+We highlight the important components and formalize the research questions explored in this paper. 
+
+\vspace{0.5em}
+
+\noindent\textbf{Detector (Section \ref{det}). } The first challenge in \sys is dirty data detection. In this step, the detector select a candidate set of dirty records $R_{dirty} \subseteq R$. There are two techniques to do this: (1) an \emph{a priori} case, and (2) and an adaptive case. In the \emph{a priori} case, the detector knows which data is dirty in advance. In the adaptive case, the detector learns classifier based on previously cleaned data.
+
+\vspace{0.5em}
+
+\noindent\textbf{Sampler (Section \ref{dist-samp}). } The sampler draws a sample of records $S_{dirty} \subseteq R_{dirty}$. This is a non-uniform sample where each record $r$ has a sampling probability $p(r)$.
+We will derive the optimal sampling distribution, and show how the theoretical optimal can be approximated by the next estimator.
+
+\vspace{0.5em}
+
+\noindent\textbf{Cleaner (User-Specified). } Given the sample of the records $S_{dirty}$,  the cleaner applies the user-specified data cleaning $C(\cdot)$. This paper focuses on a record-by-record cleaning model where the function $C$ is applied to a record and produces the clean record:
+\[
+S_{clean} = \{C(r) : \forall r \in S_{dirty}\}
+\]
+This allows for uniform measure of the performance of \sys in terms of model error as a function of sample size. The record-by-record cleaning model is not a fundemental restriction of this approach, and in the extensions (Section \ref{set-of-r}), there is a discussion on a compatible ``set of records" cleaning model. Consider the case where an analyst finds a dirty record, and is able to fix all records (possibly outside the sample) with same error throughout the dataset efficiently.
+
+\vspace{0.5em}
+
+\noindent\textbf{Updater (Section \ref{model-update}). } The updater updates the model $\theta^{(t)}$ based on the newly cleaned data $F(S_{clean})$ resulting in $\theta^{(t+1)}$. Analyzing the model update procedure as a stochastic gradient descent algorithm will help derive the sampling distribution and estimation.
+
+\vspace{0.5em}
+
+\noindent\textbf{Estimator (Section \ref{sampling}): } The estimator approximates the optimal distribution derived in the Sample step. Based on the change between $F(S_{clean})$ and $F(S_{dirty})$, it directs the next iteration of sampling to select points that will have changes most valuable to the next model update.
+
+\iffalse
+\subsection{Optimizations}
+There are three aspects of \sys, that allow us to achieve this design point: error partitioning, gradient-based model update (Section \ref{model-update}), estimate-driven sampling (Section \ref{sampling}).
+
+\vspace{0.5em}
+
+\noindent\textbf{Partitioning Dirty and Clean Data: } In many applications, enumerating the set of corrupted records is much easier than cleaning them. For example, we may be able to select the set of rows that have missing values but actually filling those missing values is expensive. Likewise, in the constraint literature, selecting a set of rows that have a violated constraint can be done in polynomial time, however, fixing the constraints is NP-Hard.
+In our error detection step, we partition the dirty and clean data.
+Partitioning serves two purposes: (1) it reduces the variance of our updates because we can cheaply scan over data we know that is clean, and (2) it increases the fraction of actually dirty records in the candidate batch.
+A good example of why we need the second objective is seen in the context of crowdsourcing.
+If we have a crowdworker clean records, we will have to pay them for the task whether or not the record required cleaning.
+To efficiently use this partitioning, we need a database solution indexing dirty and clean data.
+
+\vspace{0.5em}
+
+\noindent\textbf{Gradient-Based Updates: } In \sys, we start with a dirty model and then make an update using a gradient step. Here, we can draw an analogy to Materialized View maintenance, since after all, a model parametrized by $\theta$ is just a table of floating point numbers.
+Krishnan et al. proposed a technique called sample view cleaning, in which they take a clean sample of data and propagate the updates to a Materialized View.
+Similarly, in this work, we take the information from a sample of cleaned data and propagate an update with the gradient.
+
+\vspace{0.5em}
+
+\noindent\textbf{Estimate-Driven Sampling: } Repair is the most expensive step in the workflow, so optimizing for scan cost may lead to negligible overall time improvements.
+We can sacrifice a small overhead in pre-computation for each data point to determine its value to the model and select a sampling distribution accordingly.
+Intuitively, while each iteration has an increased cost, it also makes more progress towards the optimum.
+\fi
+
+
