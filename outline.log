@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 JAN 2016 15:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 JAN 2016 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,69 +567,76 @@ el
  []
 
 ) (./architecture.tex
+LaTeX Font Info:    Try loading font information for T1+aess on input line 44.
 
-LaTeX Warning: Reference `sys-arch' on page \thepage  undefined on input line 3
-.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+)
+LaTeX Font Info:    Try loading font information for T1+aett on input line 56.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 57.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+[]\T1/aett/m/n/7 dirty_sample $\OT1/cmr/m/n/7 =$ \T1/aett/m/n/7 sam-pler(dirty_
+data, sam-ple_prob, de-tec-
+ []
 
 
-LaTeX Warning: Reference `dmodel' on page \thepage  undefined on input line 12.
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+[]\T1/aett/m/n/7 current_model $\OT1/cmr/m/n/7 =$ \T1/aett/m/n/7 Up-date(curren
+t_model, sam-ple_prob,
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+[]\T1/aett/m/n/7 sample_prob $\OT1/cmr/m/n/7 =$ \T1/aett/m/n/7 Es-ti-ma-tor(dir
+ty_data, cleaned_data, de-tec-
+ []
 
-LaTeX Warning: Reference `opti' on page \thepage  undefined on input line 34.
-
-
-LaTeX Warning: Reference `comp' on page \thepage  undefined on input line 35.
-
-
-LaTeX Warning: Reference `s:usecase' on page \thepage  undefined on input line 
-38.
-
-<figs/arch.png, id=15, 583.9416pt x 207.174pt>
+[2] <figs/arch.png, id=30, 583.9416pt x 207.174pt>
 File: figs/arch.png Graphic file (type png)
  <use figs/arch.png>
-Package pdftex.def Info: figs/arch.png used on input line 136.
+Package pdftex.def Info: figs/arch.png used on input line 174.
 (pdftex.def)             Requested size: 240.0pt x 85.14735pt.
 )
-(./interface.tex <figs/interface1.png, id=16, 483.7272pt x 334.3692pt>
+(./interface.tex <figs/interface1.png, id=31, 483.7272pt x 334.3692pt>
 File: figs/interface1.png Graphic file (type png)
 
 <use figs/interface1.png>
 Package pdftex.def Info: figs/interface1.png used on input line 10.
 (pdftex.def)             Requested size: 144.00146pt x 99.53601pt.
- <figs/interface2.png, id=17, 483.7272pt x 361.35pt>
+ <figs/interface2.png, id=32, 483.7272pt x 361.35pt>
 File: figs/interface2.png Graphic file (type png)
 
 <use figs/interface2.png>
 Package pdftex.def Info: figs/interface2.png used on input line 19.
 (pdftex.def)             Requested size: 144.00146pt x 107.56775pt.
- [2 <./figs/arch.png>]
-<figs/interface3.png, id=28, 483.7272pt x 340.1508pt>
+
+<figs/interface3.png, id=33, 483.7272pt x 340.1508pt>
 File: figs/interface3.png Graphic file (type png)
 
 <use figs/interface3.png>
 Package pdftex.def Info: figs/interface3.png used on input line 27.
 (pdftex.def)             Requested size: 144.00146pt x 101.2571pt.
 
-<figs/interface4.png, id=29, 711.1368pt x 203.8014pt>
+<figs/interface4.png, id=34, 711.1368pt x 203.8014pt>
 File: figs/interface4.png Graphic file (type png)
 
 <use figs/interface4.png>
 Package pdftex.def Info: figs/interface4.png used on input line 35.
 (pdftex.def)             Requested size: 240.0pt x 68.77844pt.
 
-<figs/interface5.png, id=30, 483.7272pt x 233.1912pt>
+<figs/interface5.png, id=35, 483.7272pt x 233.1912pt>
 File: figs/interface5.png Graphic file (type png)
 
 <use figs/interface5.png>
 Package pdftex.def Info: figs/interface5.png used on input line 43.
 (pdftex.def)             Requested size: 144.00146pt x 69.41704pt.
 ) (./outline.bbl
-LaTeX Font Info:    Try loading font information for T1+aett on input line 5.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
 LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 5.
 
 
@@ -702,45 +709,47 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <3.75> not available
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <3.75> not available
 (Font)              size <5> substituted on input line 5.
 
-) [3 <./figs/interface1.png> <./figs/interface2.png> <./figs/interface3.png> <.
-/figs/interface4.png> <./figs/interface5.png>] (./outline.aux)
+) [3 <./figs/arch.png> <./figs/interface1.png> <./figs/interface2.png>]
+[4
+
+ <./figs/interface3.png> <./figs/interface4.png> <./figs/interface5.png>]
+(./outline.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 7985 strings out of 493315
- 111026 string characters out of 6137904
- 237319 words of memory out of 5000000
- 11180 multiletter control sequences out of 15000+600000
- 75852 words of font info for 113 fonts, out of 8000000 for 9000
+ 8024 strings out of 493315
+ 111726 string characters out of 6137904
+ 238319 words of memory out of 5000000
+ 11211 multiletter control sequences out of 15000+600000
+ 79376 words of font info for 122 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,13n,40p,819b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/ti
-mes/utmri8a.pfb>
-Output written on outline.pdf (3 pages, 550439 bytes).
+013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/
+times/utmb8a.pfb>
+Output written on outline.pdf (4 pages, 592975 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
