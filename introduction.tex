@@ -1,4 +1,8 @@
 \section{Introduction}
+
+{\color{red}{Proposed story: 1) ML is a data management problem  2) building models is highly iterative  3) data often coming from logs/sensors, that can be faulty  4) faulty datasources means data is dirty, can affect model 5) data prep/cleaning the inputs is hard, lack of tools to do it.  6) coupled with iterative nature (look for problems, clean some, repeat), process is WRONG.  7) Looking at trends such as deep learning, which is very high dimensional, data cleaning is very important, because models are highly sensitivy 8) want an iterative data prep system targeting ML applications 9) ActiveClean is such a system 10) demo on higgs and video.}}
+
+
 Building distributed frameworks to facilitate model training on large and growing datasets is a key data management challenge with significant interest in both industry and academia~\cite{bdas, alexandrov2014stratosphere, crotty2014tupleware, tensor}.
 While these frameworks abstract much of the difficult details of distributed Machine Learning (ML), they seldom offer the analyst any support in terms of constructing the model itself, i.e., which features to use, how to clean the data, and how to evaluate the results.
 Data often arrive \emph{dirty}, including missing, incorrect, or inconsistent attributes, and analysts widely report that data cleaning and other forms of pre-processing account for up to 80\% of their effort~\cite{nytimes, kandel2012}.
