@@ -133,14 +133,12 @@
 \maketitle
 
 \begin{abstract}
-Data cleaning is often an important step to ensure that predictive models, such as regression and classification, are not affected by errors such as inconsistent, out-of-date, or outlier data.
-%The high dimensionality of predictive models can amplify small amounts of data error leading to error-prone predictions.
-Identifying dirty data is often a manual and iterative process, and can be challenging on large datasets.
-However, many data cleaning workflows can introduce subtle biases into the training processes due to violation of independence assumptions.
-We propose \sys, a progressive cleaning approach where the model is updated incrementally instead of re-training and can guarantee accuracy on partially cleaned data.
-\sys supports a popular class of models called convex loss models (e.g., linear regression and SVMs) and record-by-record user-defined data cleaning operations.
-\sys also leverages the structure of a user's model to prioritize cleaning those records likely to affect the results.
-Evaluation on four real-world datasets suggests that for a fixed cleaning budget, \sys returns more accurate models than uniform sampling and Active Learning when corruption is systematic and sparse. 
+Databases are susceptible to various forms of corruption, or \emph{dirtiness}, such as missing, incorrect, or inconsistent values.
+Increasingly, modern data analysis pipelines involve Machine Learning for predictive models which can be sensitive to dirty data.
+Dirty data is often expensive to repair, and naive sampling solutions are not suited for training high dimensional models.
+We propose \sysfull, an anytime framework for training Machine Learning models with budgeted data cleaning.
+Our framework updates a model iteratively as small samples of data are cleaned, and includes numerous optimizations such as importance weighting and dirty data detection.
+In this demonstration, we designed a visual interface to wrap around this framework and demonstrate \sys for a video classification problem and a topic modeling problem. 
 %The key insight of \sys is that data cleaning can be applied simultaneously with incremental optimization allowing for progressive cleaning while preserving provable properties.
 %In one set of experiments with 5\% simulated error, \sys cleans 55\% fewer records to achieve the same accuracy as an Active Learning algorithm.
 \end{abstract}
