@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 JAN 2016 17:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 JAN 2016 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -452,8 +452,8 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/charter.sty
-Package: charter 2005/04/12 PSNFSS-v9.2a (P.Dyballa) 
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2011/10/22 v5.1d context-sensitive quotations
@@ -497,9 +497,9 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Try loading font information for T1+bch on input line 44.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1bch.fd
-File: t1bch.fd 2004/10/18 font definitions for T1/bch.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 44.
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -525,115 +525,136 @@ File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 \c@proposition=\count159
 \c@lemma=\count160
 \c@corollary=\count161
-LaTeX Font Info:    Try loading font information for U+msa on input line 133.
+LaTeX Font Info:    Try loading font information for U+msa on input line 136.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 133.
+LaTeX Font Info:    Try loading font information for U+msb on input line 136.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 133.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 136.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 133.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 136.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 133.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 136.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 133.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 136.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 133.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 136.
 
-(./introduction.tex <figs/update-arch.png, id=1, 932.7648pt x 307.3884pt>
+(./introduction.tex <figs/update-arch.png, id=1, 623.4492pt x 307.3884pt>
 File: figs/update-arch.png Graphic file (type png)
 
 <use figs/update-arch.png>
-Package pdftex.def Info: figs/update-arch.png used on input line 11.
-(pdftex.def)             Requested size: 240.0pt x 79.0889pt.
+Package pdftex.def Info: figs/update-arch.png used on input line 12.
+(pdftex.def)             Requested size: 240.0pt x 118.32848pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 14.
 
-Overfull \hbox (1.37415pt too wide) in paragraph at lines 35--41
-[]\T1/bch/m/n/9 As it stands, there are two key prob-lems in in-ter-ac-tive mod
-el
+Overfull \hbox (1.80025pt too wide) in paragraph at lines 29--34
+\T1/ptm/m/n/9 have fa-cil-i-tated break-throughs in pre-vi-ously hard clas-si-f
+i-ca-tion tasks
  []
 
 
-Underfull \vbox (badness 4899) has occurred while \output is active []
+Underfull \vbox (badness 4001) has occurred while \output is active []
 
  [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./figs/update-arch.png>]
-Overfull \hbox (6.36546pt too wide) in paragraph at lines 42--47
-\T1/bch/m/n/9 learn-ing to most ef-fi-ciently clean an en-tire dataset--indepen
-dent
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
+[]\T1/ptm/m/it/9 The
  []
 
 
-Overfull \hbox (9.08609pt too wide) in paragraph at lines 54--60
-[]\T1/bch/m/it/9 The JHU
+Underfull \hbox (badness 1048) in paragraph at lines 51--57
+\T1/ptm/m/it/9 JHU JIG-SAWS Dataset is a cor-pus of sur-gi-cal train-ing 120
  []
 
 
-Overfull \hbox (5.89165pt too wide) in paragraph at lines 63--68
-[]\T1/bch/m/it/9 We have a cor-
+Underfull \hbox (badness 2894) in paragraph at lines 60--65
+[]\T1/ptm/m/it/9 We have a
  []
 
-) (./architecture.tex [2]
-LaTeX Font Info:    Try loading font information for T1+aess on input line 58.
+) (./architecture.tex
+Overfull \hbox (7.61447pt too wide) in paragraph at lines 10--15
+\T1/ptm/m/n/9 of the ap-proach is to model the hu-man's it-er-a-tive pro-cess a
+s a Stochas-
+ []
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aess.fd
-File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 56.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+) [2]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 68.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 70.
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+[]\T1/pcr/m/n/7 Init(dirty_data, cleaned_data, dirty_model, batch,
+ []
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 69.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+[]\T1/pcr/m/n/7 dirty_sample $\OT1/cmr/m/n/7 =$ \T1/pcr/m/n/7 sampler(dirty_dat
+a, sample_prob,
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 73--74
-[]\T1/aett/m/n/7 dirty_sample $\OT1/cmr/m/n/7 =$ \T1/aett/m/n/7 sam-pler(dirty_
-data, sam-ple_prob, de-tec-
+[]\T1/pcr/m/n/7 current_model $\OT1/cmr/m/n/7 =$ \T1/pcr/m/n/7 Update(current_m
+odel,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-[]\T1/aett/m/n/7 current_model $\OT1/cmr/m/n/7 =$ \T1/aett/m/n/7 Up-date(curren
-t_model, sam-ple_prob,
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]\T1/pcr/m/n/7 sample_prob $\OT1/cmr/m/n/7 =$ \T1/pcr/m/n/7 Estimator(dirty_da
+ta, cleaned_data,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-[]\T1/aett/m/n/7 sample_prob $\OT1/cmr/m/n/7 =$ \T1/aett/m/n/7 Es-ti-ma-tor(dir
-ty_data, cleaned_data, de-tec-
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+[]\T1/pcr/m/n/7 detector $\OT1/cmr/m/n/7 =$ \T1/pcr/m/n/7 DetectorUpdater(detec
+tor,
  []
 
-) (./interface.tex <figs/interface1.png, id=25, 483.7272pt x 334.3692pt>
+) (./interface.tex
+Overfull \hbox (3.9606pt too wide) in paragraph at lines 96--1
+\T1/ptm/b/n/9 Partitioning Dirty and Clean Data:  \T1/ptm/m/n/9 Ac-tive-Clean a
+dap-tively learns
+ []
+
+<figs/interface1.png, id=24, 483.7272pt x 334.3692pt>
 File: figs/interface1.png Graphic file (type png)
 
 <use figs/interface1.png>
 Package pdftex.def Info: figs/interface1.png used on input line 7.
 (pdftex.def)             Requested size: 115.19897pt x 79.62779pt.
- <figs/interface2.png, id=26, 483.7272pt x 361.35pt>
+ <figs/interface2.png, id=25, 483.7272pt x 361.35pt>
 File: figs/interface2.png Graphic file (type png)
 
 <use figs/interface2.png>
 Package pdftex.def Info: figs/interface2.png used on input line 8.
 (pdftex.def)             Requested size: 115.19897pt x 86.05309pt.
 
-<figs/interface3.png, id=27, 483.7272pt x 340.1508pt>
+<figs/interface3.png, id=26, 483.7272pt x 340.1508pt>
 File: figs/interface3.png Graphic file (type png)
 
 <use figs/interface3.png>
 Package pdftex.def Info: figs/interface3.png used on input line 34.
 (pdftex.def)             Requested size: 144.00146pt x 101.2571pt.
- [3 <./figs/interface1.png> <./figs/interface2.png>]
-<figs/interface4.png, id=38, 711.1368pt x 203.8014pt>
+ [3 <./figs/interface1.png> <./figs/interface2.png> <./figs/interface3.png>] <f
+igs/interface4.png, id=38, 711.1368pt x 203.8014pt>
 File: figs/interface4.png Graphic file (type png)
 
 <use figs/interface4.png>
@@ -647,20 +668,11 @@ File: figs/interface5.png Graphic file (type png)
 Package pdftex.def Info: figs/interface5.png used on input line 57.
 (pdftex.def)             Requested size: 144.00146pt x 69.41704pt.
 ) (./proposal.tex
-Overfull \hbox (3.18318pt too wide) in paragraph at lines 2--6
-[]\T1/bch/m/n/9 In our demon-stra-tion, we will show how Ac-tive-Clean quickly
- []
-
-
-Overfull \hbox (1.19353pt too wide) in paragraph at lines 12--16
-[]\T1/bch/m/n/9 In con-clu-sion, the grow-ing pop-u-lar-ity of pre-dic-tive ML 
-mod-
- []
-
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 )
-Overfull \hbox (1.2638pt too wide) in paragraph at lines 17--165
-\T1/bch/b/n/8 Adobe, Ap-ple, Inc., Blue Goji, Bosch, C3Energy, Cisco, Cray, Clo
-ud-
+Overfull \hbox (9.74246pt too wide) in paragraph at lines 32--168
+\T1/ptm/b/n/8 CCF-1139158, LBNL Award 7076018, and DARPA XData Award FA8750-
  []
 
 (./outline.bbl
@@ -736,44 +748,41 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <3.75> not available
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <3.75> not available
 (Font)              size <5> substituted on input line 5.
 
-) [4 <./figs/interface3.png> <./figs/interface4.png> <./figs/interface5.png>]
-(./outline.aux)
+) [4 <./figs/interface4.png> <./figs/interface5.png>] (./outline.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 8030 strings out of 493315
- 111800 string characters out of 6137904
- 238319 words of memory out of 5000000
- 11214 multiletter control sequences out of 15000+600000
- 82483 words of font info for 124 fonts, out of 8000000 for 9000
+ 8057 strings out of 493315
+ 111984 string characters out of 6137904
+ 239311 words of memory out of 5000000
+ 11249 multiletter control sequences out of 15000+600000
+ 80233 words of font info for 120 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,13n,40p,819b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2013/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive
-/2013/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/
-times/utmb8a.pfb>
-Output written on outline.pdf (4 pages, 572832 bytes).
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/tim
+es/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on outline.pdf (4 pages, 489409 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

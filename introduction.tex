@@ -3,20 +3,19 @@ Building distributed frameworks to facilitate model training on large and growin
 While these frameworks abstract much of the difficult details of distributed Machine Learning (ML), they seldom offer the analyst any support in terms of constructing the model itself, such as which features to use or how to represent their data.
 The model construction process is still highly iterative, where through trial-and-error an analyst makes these choices eventually converging onto a model with the desired accuracy.
 To further complicate matters, data often arrives \emph{dirty}, including missing, incorrect, or inconsistent attributes, due to faulty sensors, software, time delays, or hardware.
-Thus, \ewu{although part of the iterative process is in tweaking the model paratemers and features, a significant portion involves identifying and cleaning potentially dirty data thas is affecting the model.  In our work, we focus on this latter issue.}
-part of the iterative model construction process involves identifying potentially dirty data, understanding how they affect the model, and applying techniques to mitigate their effects.  
+Thus, although part of the iterative process is tweaking the model paratemers and features, a significant portion involves identifying and cleaning potentially dirty data.  
+In our work, we focus on this latter issue. 
 While data cleaning is an extensively studied problem, the high dimensionality of many models can amplify even a small amount of erroneous records~\cite{xiaofeature}, and the relative complexity (in comparison to SQL analytics) can make it difficult to trace the consequnces of an error.
 
 \begin{figure}[t]
 \centering
  \includegraphics[width=\columnwidth]{figs/update-arch.png}
- \caption{\ewu{change "result" and "truth" in figure to "fit model", "true model"} (a) Systematic corruption in one variable (axes) can lead to a shifted model (fitted lines). 
- (b) Mixed dirty and clean data results in a less accurate model than no cleaning.
-(c) Small samples of only clean data can result in similarly inaccurate models. \label{update-arch1}}
+ \caption{(a) Systematic corruption in one variable (axes) can lead to a shifted model (fitted lines). 
+ (b) Mixed dirty and clean data results in a less accurate model than no cleaning.\label{update-arch1}}\vspace{-1em}
 \end{figure}
 
-\ewu{To highlight the importance of data cleaning to modern machine learning, we note ...} In prior work, we have noted the choice of data cleaning algorithm can significantly affect results even when using robust ML techniques \cite{activecleanarxiv, DBLP:conf/case/MahlerKLSMKPWFAG14}.
-\ewu{For instance,} In one fraud prediction example, we found that simply applying Entity Resolution before model training improved true positive detection probabilities from 62\% to 91\%. 
+To highlight the importance of data cleaning in modern machine learning, we have noted the choice of data cleaning algorithm can significantly affect results even when using robust ML techniques \cite{activecleanarxiv, DBLP:conf/case/MahlerKLSMKPWFAG14}.
+For instance, in one fraud prediction example, we found that simply applying Entity Resolution before model training improved true positive detection probabilities from 62\% to 91\%. 
 Despite this importance, in theory and in practice, the academic community has decoupled the data cleaning problem from featurization and ML.
 This is problematic because many ML techniques often make assumptions about data homogeneity and the consistency of sampling, which can be easily violated if the analyst applies data cleaning in an arbitrary way.
 
@@ -40,19 +39,15 @@ The analyst initializes an \sys with an ML model, a featurization function, and 
 \sys also returns an array of data sampled from the model that are possibly dirty.
 The analyst can apply any value transformations to the data and then prompt the system to iterate. 
 
-As the name implies, \sys is inspired by active learning and both seek to improve the efficiency of expensive manual or crowdsourced data cleaning.
-Prior work applies active learning to most efficiently clean an entire dataset--independent of the user's desired analysis after data cleaning.
-\ewu{Confusing because active learning also uses the model you are training.  The difference may be too subtle?  Just focus on correctness and dirty data identification and how they differ?  reminds me of the sigmode reviewer nitpicks}
-In contrast, \sys prioritizes data cleaning by identifying records, which if cleaned, are likely to change the model's predictions.
+In contrast, \sys prioritizes data cleaning by identifying records, which if cleaned, are likely to change the analyst's model predictions.
 \sys applies to a large class of models which can be represented as loss minimization problems solved by gradient descent.
-This captures SVMs, Linear Regression, Neural Netorks (Deep Learning), and some types of topic modeling problems such as LDA.
-
+This captures SVMs, Linear Regression, Neural Netorks (Deep Learning), and some types of topic modeling problems such as LDA (for a formal description see \cite{activecleanarxiv}).
 We demonstrate \sys with a visual interface allows analysts to debug complex ML models and understand the effects of dirty data.
 This interface will allow the analyst to specify the desired model and featurization.
 It will then visualize a sample of potentially dirty records, allow the analyst to clean the data appropriately, and correctly incorporate those changes back into the trained model.  
 In our demonstration, we will present two experimental scenarios where the models are affected by dirty data: 
 
-\begin{example}[Video Segmentation With CNNs]
+\begin{example}[Video Segmentation With CNNs]\sloppy
 The JHU JIGSAWS Dataset is a corpus of surgical training 120 videos from between 1-5mins long.
 These videos are annotated by expert surgeons describing the gestures that occur in the vido. 
 Classifying video frames is an important task for segmentation and summarization of future videos.
@@ -61,7 +56,7 @@ This can be done using Convolutional Neural Networks to featurize frames of the 
 However, sometimes the annotations are incorrect and \sys can be used to determine when the annotations are incorrect (correspond to the wrong gesture) and inconsistent (multiple gestures simultaneously).
 \end{example}
 
-\begin{example}[Topic Modeling With LDA]
+\begin{example}[Topic Modeling With LDA]\sloppy
 We have a corpus of reviews from Yelp and we wish to learn a topic model from this dataset.
 However, a substantial number of the reviews are spam reviews.
 These spam reviews can affect the distribution of words and affect any models learned from the data.
