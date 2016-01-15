@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{bdas}
 Berkeley data analytics stack.
@@ -21,6 +21,12 @@ A.~Crotty, A.~Galakatos, and T.~Kraska.
 \newblock Tupleware: Distributed machine learning on small clusters.
 \newblock {\em {IEEE} Data Eng. Bull.}, 37(3), 2014.
 
+\bibitem{gokhale2014corleone}
+C.~Gokhale, S.~Das, A.~Doan, J.~F. Naughton, N.~Rampalli, J.~Shavlik, and
+  X.~Zhu.
+\newblock Corleone: Hands-off crowdsourcing for entity matching.
+\newblock In {\em SIGMOD}, 2014.
+
 \bibitem{tensor}
 G.~Inc.
 \newblock Tensorflow.
@@ -33,9 +39,31 @@ J.~Mahler, S.~Krishnan, M.~Laskey, S.~Sen, A.~Murali, B.~Kehoe, S.~Patil,
   using data cleaning and gaussian process regression.
 \newblock In {\em CASE}, 2014.
 
+\bibitem{pyspark}
+P.~Spark.
+\newblock Pyspark.
+\newblock
+  \url{https://spark.apache.org/docs/0.9.0/python-programming-guide.html}.
+
+\bibitem{van2008visualizing}
+L.~Van~der Maaten and G.~Hinton.
+\newblock Visualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9(2579-2605):85, 2008.
+
 \bibitem{xiaofeature}
 H.~Xiao, B.~Biggio, G.~Brown, G.~Fumera, C.~Eckert, and F.~Roli.
 \newblock Is feature selection secure against training data poisoning?
 \newblock In {\em ICML}, 2015.
+
+\bibitem{yakout2013don}
+M.~Yakout, L.~Berti{-}Equille, and A.~K. Elmagarmid.
+\newblock Don't be scared: use scalable automatic repairing with maximal
+  likelihood and bounded changes.
+\newblock In {\em SIGMOD Conference}, 2013.
+
+\bibitem{DBLP:journals/pvldb/YakoutENOI11}
+M.~Yakout, A.~K. Elmagarmid, J.~Neville, M.~Ouzzani, and I.~F. Ilyas.
+\newblock Guided data repair.
+\newblock {\em {PVLDB}}, 4(5), 2011.
 
 \end{thebibliography}

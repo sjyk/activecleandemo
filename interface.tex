@@ -1,5 +1,5 @@
 \section{The Interface}
-Next, we will describe the components of the \sys interface used in this demonstration.
+Next, we will describe the components of the \sys interface used in this demonstration. This is a concrete implementation of the described architecture.
 
 
 \begin{figure}[t]
@@ -21,12 +21,13 @@ Both of these panels are visualized in Figure \ref{irun}.
 
 \subsection{Diagnose Interface}
 Suppose the analyst is unhappy with her model, and wishes to understand why her prediction accuracy is poor.
-She can then open the diagnose panel to understand why (Figure \ref{diag}).
-When she opens the diagnose panel, \sys applies the importance sampling algorithm to select a subset of examples from the dataset.
+She can then open the \textsf{Diagnose} panel to understand why (Figure \ref{diag}).
+When she opens the \textsf{Diagnose} panel, \sys applies the importance sampling algorithm to select a subset of examples from the dataset.
 Since these points are in general high dimensional, we apply T-SNE~\cite{van2008visualizing} to visualize the points in 2D.
+The batch size setting controls the number of examples plotted on this screen.
 T-SNE is a non-linear dimensionality reduction technique which is widely used to visualize complex data distributions.
-In the diagnose interface, we use color coding to indicate class in the case of classification.
-The analyst can select examples from the diagnose interface for further inspection.
+In the \textsf{Diagnose} panel, we use color coding to indicate class in the case of classification.
+The analyst can select examples from the plot for further inspection.
 
 \begin{figure}[t]
 \centering
@@ -35,17 +36,24 @@ The analyst can select examples from the diagnose interface for further inspecti
 \end{figure}
 
 \subsection{Clean Interface}
+If the analyst decides that the data are actually dirty, then she can open the \textsf{Clean} panel which gives her the option of remove the dirty record or applying a cleaning operation (specified in Python).
+\sys keeps track of previously written cleaning operations and the analyst need not write a new script each time, and simply assign a previously written transformation. 
+For each distinct script, \sys also trains a multi-class classifier to learn the conditions when that operation is applicable, and then be able to apply the cleaning to new data.
 
 \begin{figure}[t]
 \centering
  \includegraphics[width=\columnwidth]{figs/interface4.png}
- \caption{Clean Eval}
+ \caption{Cleaning Interface. The analyst can choose to remove data, select and existing operation, or write new a cleaning operation.}
 \end{figure}
 
 \subsection{Iteration and Updates}
+Finally, after the batch of data is cleaned, \sys updates the current best model.
+We re-run the cross-validation and visualize the differences in the model's accuracy.
+This process iterates until the analyst is satisfied with the accuracy.
+At that point the system ends, and returns a python pickle of current best model parameters.
 
 \begin{figure}[t]
 \centering
  \includegraphics[width=0.6\columnwidth]{figs/interface5.png}
- \caption{Clean Eval}
+ \caption{Update Visualization. We visualize the changes in model accuracy after data cleaning.}
 \end{figure}

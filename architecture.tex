@@ -1,6 +1,20 @@
 \section{Architecture and Overview}\label{arch}
 We will first describe \sys and overview the entire framework, and a detailed description of the research challenges and algorithms can be found in~\cite{activecleanarxiv}.
 
+\subsection{What is new?}
+Machine learning, specifically active learning, has been applied in prior work to improve the efficiency of data cleaning~\cite{yakout2013don,DBLP:journals/pvldb/YakoutENOI11,gokhale2014corleone}.
+Human input, either for cleaning or validation of automated cleaning, is often expensive and impractical for large datasets.
+A model can learn rules from a small set of examples cleaned (or validated) by a human, and active learning is a technique to carefully select the set of examples to learn the most accurate model.
+This model can be used to extrapolate repairs to not-yet-cleaned data, and the goal of these approaches is to provide the cleanest possible dataset--independent of the subsequent analytics or query processing.
+
+As the name implies, \sys is inspired from active learning as both seek to improve the efficiency of expensive data cleaning.
+In contrast, \sys addresses a very different problem, namely, how information about a user's subsequent data analysis can inform which data to clean.
+If the cleaned data will ultimately be used as training data in a predictive model, \sys presents an algorithm to prioritize those data that are most likely to change the result.
+The key new challenge is correctness.
+Models trained on partially clean data can have severe inaccuracies.
+Thus, existing approaches, which are designed for homogeneous data, cannot be applied.
+One of the primary contributions of this work is an incremental model update algorithm with correctness guarantees for mixtures of data.
+
 \subsection{Problem Setup and Formalization}
 There is a relation $R$ and we wish to train a model using the data in $R$.
 We assume that there is a featurizer $F(\cdot)$ that maps every record $r \in R$ to a feature vector $x$ and label $y$.
