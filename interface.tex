@@ -6,10 +6,10 @@ Next, we will describe the components of the \sys interface used in this demonst
 \centering
  \includegraphics[width=0.48\columnwidth]{figs/interface1.png}
  \includegraphics[width=0.48\columnwidth]{figs/interface2.png}
- \caption{Initial Run. The analyst loads user-defined model functions into \sys and then trains an initial model on the dirty data \label{irun}}
+ \caption{Initialization. The analyst loads user-defined model functions into \sys and then trains an initial model on the dirty data \label{irun}}
 \end{figure}
 
-\subsection{The Intial Run}
+\subsection{Initialization}
 The first part of \sys is called the \textsf{Model Builder}, this is an interface that the analyst uses to specify the problem.
 She loads three user-defined functions written in PySpark~\cite{pyspark} based on the descriptions in the previous section.
 Optionally, she can change the batch size from our default setting of 50.
@@ -43,17 +43,17 @@ For each distinct script, \sys also trains a multi-class classifier to learn the
 \begin{figure}[t]
 \centering
  \includegraphics[width=\columnwidth]{figs/interface4.png}
- \caption{Cleaning Interface. The analyst can choose to remove data,  write a custom cleaning operation, or automatically clean the data using an existing cleaning operation.}
+ \caption{Cleaning Interface. The analyst can choose to remove data, \ewu{ write a custom cleaning operation, or automatically clean the data using an existing cleaning operation.}}
 \end{figure}
 
 \subsection{Iteration and Updates}
 Finally, after the batch of data is cleaned, \sys updates the current best model.
-We re-run the cross-validation and visualize the differences in the model's accuracy.
+We re-run the cross-validation and visualize the differences in the model's accuracy (Figure~\ref{modelacc}).
 This process iterates until the analyst is satisfied with the accuracy.
 At that point the system ends, and returns a python pickle of current best model parameters.
 
 \begin{figure}[t]
 \centering
  \includegraphics[width=0.6\columnwidth]{figs/interface5.png}
- \caption{Update Visualization. We visualize the changes in model accuracy after data cleaning.}
+ \caption{Update Visualization. We visualize the changes in model accuracy after data cleaning.}\label{modelacc}
 \end{figure}

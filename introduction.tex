@@ -9,7 +9,7 @@ While data cleaning is an extensively studied problem, the high dimensionality o
 \begin{figure}[t]
 \centering
  \includegraphics[width=\columnwidth]{figs/update-arch.png}
- \caption{(a) Systematic corruption in one variable can lead to a shifted model. 
+ \caption{\ewu{change "result" and "truth" in figure to "fit model", "true model"} (a) Systematic corruption in one variable (axes) can lead to a shifted model (fitted lines). 
  (b) Mixed dirty and clean data results in a less accurate model than no cleaning.
 (c) Small samples of only clean data can result in similarly inaccurate models. \label{update-arch1}}
 \end{figure}
@@ -41,13 +41,14 @@ The analyst can apply any value transformations to the data and then prompt the 
 
 As the name implies, \sys is inspired by active learning and both seek to improve the efficiency of expensive manual or crowdsourced data cleaning.
 Prior work applies active learning to most efficiently clean an entire dataset--independent of the user's desired analysis after data cleaning.
+\ewu{Confusing because active learning also uses the model you are training.  The difference may be too subtle?  Just focus on correctness and dirty data identification and how they differ?  reminds me of the sigmode reviewer nitpicks}
 In contrast, \sys prioritizes data cleaning by identifying records, which if cleaned, are likely to change the model's predictions.
 \sys applies to a large class of models which can be represented as loss minimization problems solved by gradient descent.
 This captures SVMs, Linear Regression, Neural Netorks (Deep Learning), and some types of topic modeling problems such as LDA.
 
 We demonstrate \sys with a visual interface allows analysts to debug complex ML models and understand the effects of dirty data.
 This interface will allow the analyst to specify the desired model and featurization.
-It will then visualize a sample of potentially dirty records and allow the analyst to clean the data appropriately.  
+It will then visualize a sample of potentially dirty records, allow the analyst to clean the data appropriately, and correctly incorporate those changes back into the trained model.  
 In our demonstration, we will present two experimental scenarios where the models are affected by dirty data: 
 
 \begin{example}[Video Segmentation With CNNs]

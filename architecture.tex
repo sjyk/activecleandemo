@@ -7,8 +7,8 @@ Human input, either for cleaning or validation of automated cleaning, is often e
 A model can learn rules from a small set of examples cleaned (or validated) by a human, and active learning is a technique to carefully select the set of examples to learn the most accurate model.
 This model can be used to extrapolate repairs to not-yet-cleaned data, and the goal of these approaches is to provide the cleanest possible dataset--independent of the subsequent analytics or query processing.
 
-As the name implies, \sys is inspired from active learning as both seek to improve the efficiency of expensive data cleaning.
-In contrast, \sys addresses a very different problem, namely, how information about a user's subsequent data analysis can inform which data to clean.
+\sys borrows ideas from active learning in terms of improving the efficiency of expensive data cleaning and taking an incremental approach.
+\ewu{This is still confusing why it's different from active learning (the downsream business).  Maybe just focus on correctness and how points are pickd?}  However, \sys addresses a very different problem, namely, how information about a user's subsequent data analysis (the model that is trained) can inform which data to clean.
 If the cleaned data will ultimately be used as training data in a predictive model, \sys presents an algorithm to prioritize those data that are most likely to change the result.
 The key new challenge is correctness.
 Models trained on partially clean data can have severe inaccuracies.
