@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 JAN 2016 16:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 JAN 2016 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -566,23 +566,28 @@ Overfull \hbox (1.37415pt too wide) in paragraph at lines 35--41
 el
  []
 
-) (./architecture.tex
 
-LaTeX Warning: Citation `yakout2013don' on page \thepage  undefined on input li
-ne 5.
-
-
-LaTeX Warning: Citation `DBLP:journals/pvldb/YakoutENOI11' on page \thepage  un
-defined on input line 5.
+Overfull \hbox (6.36546pt too wide) in paragraph at lines 42--47
+\T1/bch/m/n/9 learn-ing to most ef-fi-ciently clean an en-tire dataset--indepen
+dent
+ []
 
 
-LaTeX Warning: Citation `gokhale2014corleone' on page \thepage  undefined on in
-put line 5.
+Overfull \hbox (9.08609pt too wide) in paragraph at lines 54--60
+[]\T1/bch/m/it/9 The JHU
+ []
 
+
+Overfull \hbox (5.89165pt too wide) in paragraph at lines 63--68
+[]\T1/bch/m/it/9 We have a cor-
+ []
+
+) (./architecture.tex [2]
 LaTeX Font Info:    Try loading font information for T1+aess on input line 58.
+
 (/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
-) [2]
+)
 LaTeX Font Info:    Try loading font information for T1+aett on input line 70.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
@@ -608,34 +613,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--79
 ty_data, cleaned_data, de-tec-
  []
 
-) (./interface.tex <figs/interface1.png, id=26, 483.7272pt x 334.3692pt>
+) (./interface.tex <figs/interface1.png, id=25, 483.7272pt x 334.3692pt>
 File: figs/interface1.png Graphic file (type png)
 
 <use figs/interface1.png>
 Package pdftex.def Info: figs/interface1.png used on input line 7.
 (pdftex.def)             Requested size: 115.19897pt x 79.62779pt.
- <figs/interface2.png, id=27, 483.7272pt x 361.35pt>
+ <figs/interface2.png, id=26, 483.7272pt x 361.35pt>
 File: figs/interface2.png Graphic file (type png)
 
 <use figs/interface2.png>
 Package pdftex.def Info: figs/interface2.png used on input line 8.
 (pdftex.def)             Requested size: 115.19897pt x 86.05309pt.
-
-<figs/interface3.png, id=28, 483.7272pt x 340.1508pt>
+ [3 <./figs/interface1.png> <./figs/interface2.png>]
+<figs/interface3.png, id=37, 483.7272pt x 340.1508pt>
 File: figs/interface3.png Graphic file (type png)
 
 <use figs/interface3.png>
 Package pdftex.def Info: figs/interface3.png used on input line 34.
 (pdftex.def)             Requested size: 144.00146pt x 101.2571pt.
- [3 <./figs/interface1.png> <./figs/interface2.png> <./figs/interface3.png>] <f
-igs/interface4.png, id=39, 711.1368pt x 203.8014pt>
+
+<figs/interface4.png, id=38, 711.1368pt x 203.8014pt>
 File: figs/interface4.png Graphic file (type png)
 
 <use figs/interface4.png>
 Package pdftex.def Info: figs/interface4.png used on input line 45.
 (pdftex.def)             Requested size: 240.0pt x 68.77844pt.
 
-<figs/interface5.png, id=40, 483.7272pt x 233.1912pt>
+<figs/interface5.png, id=39, 483.7272pt x 233.1912pt>
 File: figs/interface5.png Graphic file (type png)
 
 <use figs/interface5.png>
@@ -714,21 +719,17 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <3.75> not available
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <3.75> not available
 (Font)              size <5> substituted on input line 5.
 
-) [4
-
- <./figs/interface4.png> <./figs/interface5.png>] (./outline.aux)
+) [4 <./figs/interface3.png> <./figs/interface4.png> <./figs/interface5.png>]
+(./outline.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  8025 strings out of 493315
  111748 string characters out of 6137904
- 237319 words of memory out of 5000000
+ 238319 words of memory out of 5000000
  11213 multiletter control sequences out of 15000+600000
  79376 words of font info for 122 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -752,7 +753,7 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts
 ype1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/
 times/utmb8a.pfb>
-Output written on outline.pdf (4 pages, 565794 bytes).
+Output written on outline.pdf (4 pages, 569815 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

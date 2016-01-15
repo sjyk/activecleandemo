@@ -39,22 +39,32 @@ The analyst initializes an \sys with an ML model, a featurization function, and 
 \sys also returns an array of data sampled from the model that are possibly dirty.
 The analyst can apply any value transformations to the data and then prompt the system to iterate. 
 
+As the name implies, \sys is inspired by active learning and both seek to improve the efficiency of expensive manual or crowdsourced data cleaning.
+Prior work applies active learning to most efficiently clean an entire dataset--independent of the user's desired analysis after data cleaning.
+In contrast, \sys prioritizes data cleaning by identifying records, which if cleaned, are likely to change the model's predictions.
+\sys applies to a large class of models which can be represented as loss minimization problems solved by gradient descent.
+This captures SVMs, Linear Regression, Neural Netorks (Deep Learning), and some types of topic modeling problems such as LDA.
+
 We demonstrate \sys with a visual interface allows analysts to debug complex ML models and understand the effects of dirty data.
 This interface will allow the analyst to specify the desired model and featurization.
 It will then visualize a sample of potentially dirty records and allow the analyst to clean the data appropriately.  
 In our demonstration, we will present three experimental scenarios where the models are affected by dirty data: 
 
-\begin{example}[Event Detection With SVMs]
-
-
-\end{example}
-
 \begin{example}[Video Segmentation With CNNs]
-
+The JHU JIGSAWS Dataset is a corpus of surgical training 120 videos from between 1-5mins long.
+These videos are annotated by expert surgeons describing the gestures that occur in the vido. 
+Classifying video frames is an important task for segmentation and summarization of future videos.
+We would like a classifier that can predict these annotations.
+This can be done using Convolutional Neural Networks to featurize frames of the video and then applying a standard classifier like an SVM after the features are extracted.
+However, sometimes the annotations are incorrect and \sys can be used to determine when the annotations are incorrect (correspond to the wrong gesture) and inconsistent (multiple gestures simultaneously).
 \end{example}
 
 \begin{example}[Topic Modeling With LDA]
-
+We have a corpus of reviews from Yelp and we wish to learn a topic model from this dataset.
+However, a substantial number of the reviews are spam reviews.
+These spam reviews can affect the distribution of words and affect any models learned from the data.
+However, some spam reviews are hard to detect automatically and require human validation.
+We can apply \sys to efficiently estimate the topic model without having to validate every review.
 \end{example}
  
 
