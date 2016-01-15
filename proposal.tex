@@ -1,15 +1,30 @@
 \section{Demonstration Proposal}
-In our demonstration, we will show how \sys quickly improves the accuracy of the Video Segmentation Model and the Topic Model.
-We will first present a screen animation of how an analyst can use \sys with either one of these scenarios.
-This will walk through all of the key panels of the interface and show real instantiations of models, gradients, and featurization.
-This will serve to be an introduction to the system and will demonstrate it's performance in real scenarios.
+In our demonstration, we will highlight both ActiveClean's overall efficacy on real large-scale scientific datasets, as well as provide the 
+user with hands-on experience working in the clean-validate-retrain loop that is part of ActiveClean.  
+For the latter, users will clean a dataset they have not encountered, which we hope accentuates the value of an automatic, prioritized sample selection algorithm. 
+Overall, the demonstraint is intended to show how \sys quickly improves the accuracy of the Video Segmentation Model and the Topic Model.
 
-After the animation is complete, participants will also be able to use \sys.
-We will present a simplified dataset and model with artificial errors.
-Participants will be able to train an SVM and clean for a binary classification task.
+To this end, we will first run the demo in automatic mode.  
+Here, the demo will automatically walk through all of the key panels of the interface, using full-scale instantiations of the models and datasets.
+As part of this process, the demo will execute the iterative cleaning loop automatically, and compare both ActiveClean and naive Active Learning.
+Thus, both algorithms will select samples of dirty data points, automatically clean the points by replacing incorrect values with ground-truth, and retrain the model.  
+The visualization of the cross-validation accuracy the resulting models, as well as the diagnosis interface, will be updated in real time, so that participants can visually compare the progress of both ActiveClean and
+the Active Learning algorithms in a real scenario.
+
+% The user will be able to see how quickly the model  present an animation of ActiveClean running automatically.
+% screen animation of how an analyst can use \sys with either one of these scenarios.
+% This will walk through all of the key panels of the interface and show real instantiations of models, gradients, and featurization.
+% This will serve to be an introduction to the system and will demonstrate it's performance in real scenarios.
+
+
+After the automatic mode is complete, participants will have hands-on experience with \sys..
+We will present a simplified dataset and model with artificial errors that is small enough to fully clean in a minute or two.
+Participants will be able to train an SVM and manually clean samples of data using ActiveClean for a binary classification task.
 This will illustrate the tradeoffs and usability of the system.
 
-In conclusion, the growing popularity of predictive ML models in data analytics adds additional challenges in managing dirty data.
+\section{Conclusion}
+
+The growing popularity of predictive ML models in data analytics adds additional challenges in managing dirty data.
 Progressive data cleaning in this setting is susceptible to errors due to mixing dirty and clean data, sensitivity to sample size, and the sparsity of errors.
 The key insight of \sys is that an important class of predictive models, called loss models (e.g., linear regression and SVMs), can be simultaneously trained and cleaned with guarantees.
 We hope to convey to the participants that the design of the ML development environment can be used to facilitate proper methodology and convergence of algorithm.
