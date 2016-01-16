@@ -26,7 +26,10 @@ This will illustrate the tradeoffs and usability of the system.
 
 The growing popularity of predictive ML models in data analytics adds additional challenges in managing dirty data.
 Progressive data cleaning in this setting is susceptible to errors due to mixing dirty and clean data, sensitivity to sample size, and the sparsity of errors.
-The key insight of \sys is that an important class of predictive models, called loss models (e.g., linear regression and SVMs), can be simultaneously trained and cleaned with guarantees.
-We hope to convey to the participants that the design of the ML development environment can be used to facilitate proper methodology and convergence of algorithm.
+The underlying statistical problems are subtle and not known to many analysts.
+The key insight of \sys is that an important class of predictive models, called loss models (e.g., linear regression and SVMs), can be cleaned progressively with guarantees by embedding the process into an incremental optimization loop.
+We hope to convey to the participants that the design of the ML development environment can be used to facilitate proper methodology.
+
+\vspace{1em}
 
 \textbf{\small This research is supported in part by NSF CISE Expeditions Award CCF-1139158, LBNL Award 7076018, and DARPA XData Award FA8750-12-2-0331, and gifts from Amazon Web Services, Google, SAP, The Thomas and Stacey Siebel Foundation, Adatao, Adobe, Apple, Inc., Blue Goji, Bosch, C3Energy, Cisco, Cray, Cloudera, EMC2, Ericsson, Facebook, Guavus, HP, Huawei, Informatica, Intel, Microsoft, NetApp, Pivotal, Samsung, Schlumberger, Splunk, Virdata and VMware.}

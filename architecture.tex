@@ -9,9 +9,9 @@ This model can be used to extrapolate repairs to not-yet-cleaned data, and the g
 
 Prior work studies applying machine learning to facilitate improved data cleaning, and in contrast, \sys explores the problem of the impact of data cleaning on user-specified models.
 This new problem setting leads to questions of correctness and ``push-down" prioritization, i.e., how information about a user's subsequent data analysis (the model that is trained) can inform which data to clean.
-Existing approaches, which are designed for homogeneous data, cannot be applied here.
+Existing approaches are designed for homogeneous data (all dirty or all clean) and cannot be applied here.
 One of the primary contributions of this work is an incremental model update algorithm with correctness guarantees for mixtures of data.
-The essence of the approach is to model the human's iterative process as a Stochastic Gradient Descent loop.
+The essence of the approach is to model the entire human's iterative process as a Stochastic Gradient Descent loop, which captures many different model types.
 
 \subsection{Problem Setup and Formalization}
 There is a relation $R$ and we wish to train a model using the data in $R$.
@@ -79,7 +79,7 @@ or passes control to the {\it sampler} for the next iteration.
   \item \texttt{Output: current\_model}
   \end{enumerate}
 
-\subsection{Optimizations}
+\subsection{Technical Details}
 We overview some of the research contributions and the details can be found in~\cite{activecleanarxiv}.
 
   \vspace{0.5em}

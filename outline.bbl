@@ -11,11 +11,6 @@ A.~Alexandrov, R.~Bergmann, S.~Ewen, J.~Freytag, F.~Hueske, A.~Heise, O.~Kao,
 \newblock The stratosphere platform for big data analytics.
 \newblock {\em {VLDB} J.}, 23(6), 2014.
 
-\bibitem{activecleanarxiv}
-A.~Arxiv.
-\newblock Activeclean: Arxiv.
-\newblock \url{http://arxiv.org}.
-
 \bibitem{crotty2014tupleware}
 A.~Crotty, A.~Galakatos, and T.~Kraska.
 \newblock Tupleware: Distributed machine learning on small clusters.
@@ -31,6 +26,12 @@ C.~Gokhale, S.~Das, A.~Doan, J.~F. Naughton, N.~Rampalli, J.~Shavlik, and
 G.~Inc.
 \newblock Tensorflow.
 \newblock \url{https://www.tensorflow.org/}.
+
+\bibitem{activecleanarxiv}
+S.~Krishnan, J.~Wang, E.~Wu, M.~J. Franklin, and K.~Goldberg.
+\newblock Activeclean: Interactive data cleaning while learning convex loss
+  models.
+\newblock \url{http://sampleclean.org/activeclean.pdf}.
 
 \bibitem{DBLP:conf/case/MahlerKLSMKPWFAG14}
 J.~Mahler, S.~Krishnan, M.~Laskey, S.~Sen, A.~Murali, B.~Kehoe, S.~Patil,
@@ -49,6 +50,12 @@ P.~Spark.
 L.~Van~der Maaten and G.~Hinton.
 \newblock Visualizing data using t-sne.
 \newblock {\em Journal of Machine Learning Research}, 9(2579-2605):85, 2008.
+
+\bibitem{wang1999sample}
+J.~Wang, S.~Krishnan, M.~J. Franklin, K.~Goldberg, T.~Kraska, and T.~Milo.
+\newblock A sample-and-clean framework for fast and accurate query processing
+  on dirty data.
+\newblock In {\em SIGMOD Conference}, 2014.
 
 \bibitem{xiaofeature}
 H.~Xiao, B.~Biggio, G.~Brown, G.~Fumera, C.~Eckert, and F.~Roli.

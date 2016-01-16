@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 JAN 2016 11:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 JAN 2016 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,16 +552,10 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 File: figs/update-arch.png Graphic file (type png)
 
 <use figs/update-arch.png>
-Package pdftex.def Info: figs/update-arch.png used on input line 12.
+Package pdftex.def Info: figs/update-arch.png used on input line 13.
 (pdftex.def)             Requested size: 240.0pt x 118.32848pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 14.
-
-Overfull \hbox (1.80025pt too wide) in paragraph at lines 29--34
-\T1/ptm/m/n/9 have fa-cil-i-tated break-throughs in pre-vi-ously hard clas-si-f
-i-ca-tion tasks
- []
-
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 15.
 
 Underfull \vbox (badness 4001) has occurred while \output is active []
 
@@ -569,30 +563,26 @@ Underfull \vbox (badness 4001) has occurred while \output is active []
 
 
  <./figs/update-arch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 51--57
+Underfull \hbox (badness 10000) in paragraph at lines 55--61
 []\T1/ptm/m/it/9 The
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 51--57
+Underfull \hbox (badness 1048) in paragraph at lines 55--61
 \T1/ptm/m/it/9 JHU JIG-SAWS Dataset is a cor-pus of sur-gi-cal train-ing 120
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 60--65
+Underfull \hbox (badness 2894) in paragraph at lines 64--69
 []\T1/ptm/m/it/9 We have a
  []
 
-) (./architecture.tex
-Overfull \hbox (7.61447pt too wide) in paragraph at lines 10--15
-\T1/ptm/m/n/9 of the ap-proach is to model the hu-man's it-er-a-tive pro-cess a
-s a Stochas-
- []
-
+) (./architecture.tex [2]
 LaTeX Font Info:    Try loading font information for T1+phv on input line 56.
+
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-) [2]
+)
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 68.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -638,40 +628,40 @@ dap-tively learns
 File: figs/interface1.png Graphic file (type png)
 
 <use figs/interface1.png>
-Package pdftex.def Info: figs/interface1.png used on input line 7.
+Package pdftex.def Info: figs/interface1.png used on input line 6.
 (pdftex.def)             Requested size: 115.19897pt x 79.62779pt.
  <figs/interface2.png, id=25, 483.7272pt x 361.35pt>
 File: figs/interface2.png Graphic file (type png)
 
 <use figs/interface2.png>
-Package pdftex.def Info: figs/interface2.png used on input line 8.
+Package pdftex.def Info: figs/interface2.png used on input line 7.
 (pdftex.def)             Requested size: 115.19897pt x 86.05309pt.
 
 <figs/interface3.png, id=26, 483.7272pt x 340.1508pt>
 File: figs/interface3.png Graphic file (type png)
 
 <use figs/interface3.png>
-Package pdftex.def Info: figs/interface3.png used on input line 34.
+Package pdftex.def Info: figs/interface3.png used on input line 33.
 (pdftex.def)             Requested size: 144.00146pt x 101.2571pt.
  [3 <./figs/interface1.png> <./figs/interface2.png> <./figs/interface3.png>] <f
 igs/interface4.png, id=38, 711.1368pt x 203.8014pt>
 File: figs/interface4.png Graphic file (type png)
 
 <use figs/interface4.png>
-Package pdftex.def Info: figs/interface4.png used on input line 45.
+Package pdftex.def Info: figs/interface4.png used on input line 49.
 (pdftex.def)             Requested size: 240.0pt x 68.77844pt.
 
 <figs/interface5.png, id=39, 483.7272pt x 233.1912pt>
 File: figs/interface5.png Graphic file (type png)
 
 <use figs/interface5.png>
-Package pdftex.def Info: figs/interface5.png used on input line 57.
+Package pdftex.def Info: figs/interface5.png used on input line 62.
 (pdftex.def)             Requested size: 144.00146pt x 69.41704pt.
 ) (./proposal.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 35.
 )
-Overfull \hbox (9.74246pt too wide) in paragraph at lines 32--168
+Overfull \hbox (9.74246pt too wide) in paragraph at lines 35--168
 \T1/ptm/b/n/8 CCF-1139158, LBNL Award 7076018, and DARPA XData Award FA8750-
  []
 
@@ -755,10 +745,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 8057 strings out of 493315
- 111984 string characters out of 6137904
+ 8058 strings out of 493315
+ 112000 string characters out of 6137904
  239311 words of memory out of 5000000
- 11249 multiletter control sequences out of 15000+600000
+ 11250 multiletter control sequences out of 15000+600000
  80233 words of font info for 120 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,13n,40p,819b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -779,7 +769,7 @@ st/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on outline.pdf (4 pages, 489409 bytes).
+Output written on outline.pdf (4 pages, 490277 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
