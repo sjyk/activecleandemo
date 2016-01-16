@@ -4,12 +4,30 @@
 Berkeley data analytics stack.
 \newblock \url{https://amplab.cs.berkeley.edu/software/}.
 
+\bibitem{informatica}
+Informatica.
+\newblock \url{https://www.informatica.com}.
+
+\bibitem{talend}
+Talend.
+\newblock \url{https://www.talend.com/solutions/etl-analytics}.
+
+\bibitem{trifacta}
+Trifacta.
+\newblock \url{http://www.trifacta.com}.
+
 \bibitem{alexandrov2014stratosphere}
 A.~Alexandrov, R.~Bergmann, S.~Ewen, J.~Freytag, F.~Hueske, A.~Heise, O.~Kao,
   M.~Leich, U.~Leser, V.~Markl, F.~Naumann, M.~Peters, A.~Rheinl{\"{a}}nder,
   M.~J. Sax, S.~Schelter, M.~H{\"{o}}ger, K.~Tzoumas, and D.~Warneke.
 \newblock The stratosphere platform for big data analytics.
 \newblock {\em {VLDB} J.}, 23(6), 2014.
+
+\bibitem{chen2014integrating}
+Z.~Chen and M.~Cafarella.
+\newblock Integrating spreadsheet data via accurate and low-effort extraction.
+\newblock In {\em Proceedings of the 20th ACM SIGKDD international conference
+  on Knowledge discovery and data mining}. ACM, 2014.
 
 \bibitem{crotty2014tupleware}
 A.~Crotty, A.~Galakatos, and T.~Kraska.
@@ -51,11 +69,10 @@ L.~Van~der Maaten and G.~Hinton.
 \newblock Visualizing data using t-sne.
 \newblock {\em Journal of Machine Learning Research}, 9(2579-2605):85, 2008.
 
-\bibitem{wang1999sample}
-J.~Wang, S.~Krishnan, M.~J. Franklin, K.~Goldberg, T.~Kraska, and T.~Milo.
-\newblock A sample-and-clean framework for fast and accurate query processing
-  on dirty data.
-\newblock In {\em SIGMOD Conference}, 2014.
+\bibitem{openrefine}
+R.~Verborgh and M.~De~Wilde.
+\newblock {\em Using OpenRefine}.
+\newblock Packt Publishing Ltd, 2013.
 
 \bibitem{xiaofeature}
 H.~Xiao, B.~Biggio, G.~Brown, G.~Fumera, C.~Eckert, and F.~Roli.

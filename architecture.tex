@@ -95,14 +95,14 @@ We overview some of the research contributions and the details can be found in~\
 
   \vspace{0.5em}
 
-  \noindent\textbf{Updater: } Rather than retraining, in \sys, we start with a dirty model as an initialization, and then incrementally make an update using a gradient step.
+  \noindent\textbf{Updater (Incremental Gradient Method): } Rather than retraining, in \sys, we start with a dirty model as an initialization, and then incrementally make an update using a gradient step.
   This process leverages the structure of the model rather than treating it like a black-box, and we apply convergence arguments from optimization theory.
 
   \vspace{0.5em}
 
-  \noindent\textbf{Estimator and Sampler: } We use an importance sampling technique to select a sample of likely dirty records. This is designed in a way so it still preserves convergence guarantees.
+  \noindent\textbf{Sampler (Importance Sampling): } We use an importance sampling technique to select a sample of likely dirty records. This is designed in a way so it still preserves convergence guarantees.
 
   \vspace{0.5em}
 
-  \noindent\textbf{Detector: } \sys adaptively learns to partition dirty and clean data based on the analysts actions.
+  \noindent\textbf{Detector (Partitioning): } \sys adaptively learns to partition dirty and clean data based on the analysts actions.
   Partitioning serves two purposes: (1) it reduces the variance of our updates because we can cheaply scan over data we know that is clean, and (2) it increases the fraction of actually dirty records in the candidate batch.

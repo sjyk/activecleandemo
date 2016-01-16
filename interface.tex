@@ -12,9 +12,6 @@ Next, we will describe the components of the \sys interface used in this demonst
 The analyst first uses the \textsf{Model Builder} (Figure~\ref{irun}, left panel) to specify and initialized the problem.
 She loads three user-defined functions written in PySpark~\cite{pyspark} based on the descriptions in the previous section, and
 optionally  tune the stopping criteria.
-\ewu{COMPLETELY UNNECESSARY.  CUT! Once the model is instantiated, she can train the model on the dirty data.
-If there are any errors that are critical, i.e., causes the training to fail, \sys will immediately error.
-However, if}
 Once the model is trained, the right panel will show summary information.
 The top shows \textsf{Performance} information, and plots the model's convergence as a function of iteration,
 The bottom shows model accuracy information, and shows the cross-validation accuracy if it is a classification task and the hold-out residual error if it is a regression task.
@@ -22,7 +19,7 @@ The bottom shows model accuracy information, and shows the cross-validation accu
 \subsection{Diagnose Interface}
 Suppose the analyst is unhappy with her model, and wishes to understand why her prediction accuracy is poor.
 She can then open the \textsf{Diagnose} panel to understand why (Figure~\ref{diag}).
-When she opens the \textsf{Diagnose} panel, \sys applies the importance sampling algorithm \ewu{Rename estimate-driven prioritization or establish a consistent name with Section 2} to select and visualize a subset of examples from the dataset.
+When she opens the \textsf{Diagnose} panel, \sys applies the importance sampling algorithm to select and visualize a subset of examples from the dataset.
 Since these points are in general high dimensional, we apply T-SNE~\cite{van2008visualizing},
 a non-linear dimensionality reduction technique that is widely used to visualize complex data distributions,
 to visualize the points in a 2-D plot.
@@ -32,7 +29,7 @@ The analyst can select examples from the plot for further inspection.
 
 \begin{figure}[t]
 \centering
- \includegraphics[width=0.6\columnwidth]{figs/interface3.png}
+ \includegraphics[width=0.5\columnwidth]{figs/interface3.png}
  \caption{The diagnose inteface. The analyst can select and inspect suspect data. \label{diag}}
 \end{figure}
 
@@ -44,10 +41,6 @@ Custom cleaning operations are added to the library to help taxonomize different
 %This serves two purposes: (1) it reduces effort for the analyst, and (2) it helps \sys taxonomize the types of errors in the dataset.
 This also provides a hint about which data are similarly corrupted (and thus fixed), we can guide future samples to draw similar data in future samples.
 We do this by training a classifier to learn the conditions for when the operation is applicable to a record, the details are described in our technical report~\cite{activecleanarxiv}.
-\ewu{Maybe cut the rest.. What does this sentence mean? How does drawing not quite cleaned data (whatever tha means) translate into an optimization?} 
-This may draw data not quite cleaned by the operations described in the script.
-This optimization is described in detail in our technical report~\cite{activecleanarxiv}. 
-Essentially, for each distinct script, \sys also trains a classifier to learn the conditions when that operation is applicable.
 
 \begin{figure}[t]
 \centering
@@ -63,6 +56,6 @@ Once \sys satisfies the stopping conditions, the current best model parameters a
 
 \begin{figure}[t]
 \centering
- \includegraphics[width=0.6\columnwidth]{figs/interface5.png}
+ \includegraphics[width=0.4\columnwidth]{figs/interface5.png}
  \caption{Update Visualization. We visualize the changes in model accuracy after data cleaning.}\label{modelacc}
 \end{figure}

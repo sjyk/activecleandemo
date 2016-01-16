@@ -8,13 +8,6 @@ Thus, although part of the iterative process is tweaking the model paratemers an
 In our work, we focus on this latter issue. 
 While data cleaning is an extensively studied problem, the high dimensionality of many models can amplify even a small amount of erroneous records~\cite{xiaofeature}, and the relative complexity (in comparison to SQL analytics) can make it difficult to trace the consequnces of an error.
 
-\begin{figure}[t]
-\centering
- \includegraphics[width=\columnwidth]{figs/update-arch.png}
- \caption{(a) Systematic corruption in one variable (axes) can lead to a shifted model (fitted lines). 
- (b) Mixed dirty and clean data results in a less accurate model than no cleaning.\label{update-arch1}}\vspace{-1em}
-\end{figure}
-
 To highlight the importance of data cleaning in modern ML pipelines, we have noted the choice of data cleaning algorithm can significantly affect results even when using robust statistical techniques \cite{activecleanarxiv, DBLP:conf/case/MahlerKLSMKPWFAG14}.
 For instance, in one fraud prediction example, we found that simply applying Entity Resolution before model training improved true positive detection probabilities from 62\% to 91\%. 
 Despite this importance, in theory and in practice, the academic community has decoupled the data cleaning problem from featurization and ML.
@@ -27,6 +20,13 @@ After cleaning, she re-trains the model--iterating until she no longer finds dir
 This iterative process is the de facto standard, and is in fact encouraged by the design of the increasingly popular interactive ``notebook" ML development environments (e.g., IPython).
 However, this makes the implicit assumption that model training commutes with incremental data cleaning, and the models trained on partially clean data have meaningful predictive value.
 This assumption is often incorrect; due to the well-known Simpson's paradox, models trained on a mix of dirty and clean data can have very misleading results even in simple scenarios (Figure \ref{update-arch1}).
+
+\begin{figure}[t]
+\centering
+ \includegraphics[width=0.8\columnwidth]{figs/update-arch.png}
+ \caption{(a) Systematic corruption in one variable (axes) can lead to a shifted model (fitted lines). 
+ (b) Mixed dirty and clean data results in a less accurate model than no cleaning.\label{update-arch1}}\vspace{-2em}
+\end{figure}
 
 In a parallel trend, the advent of techniques such as Deep Learning and Non-Parametric Bayesian Methods has lead to an explosion in the number of model parameters.
 It is now common to use 100,000s of features in image processing processing problems with Convolutional Neural Networks.

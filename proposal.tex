@@ -23,18 +23,19 @@ We will present a simplified dataset and model with artificial errors that is sm
 Participants will be able to train an SVM and manually clean samples of data using ActiveClean for a binary classification task.
 This will illustrate the tradeoffs and usability of the system.
 
-\section{Conclusion}
+\vspace{2em}
 
+\section{Conclusion}
 Building and training high quality machine learning models is hard, and doing so in the context of dirty data is painful.
 When presented with large, dirty datasets, practitioners often complaint that it is difficult to even know where to start the cleaning process.
 Worse, this process is often manual and makes fully cleaning the entire dataset impractical.  
-In such settings, analysts often resort to iterative data cleaning \ewu{ref trifacta and other companies?} as described in this paper, 
-which is susceptible to errors due to the mixing of dirty and clean data, model sensitivity to sample size, and the sparsity of errors.
+In such settings, analysts often resort to iterative data cleaning, and this is a paradigm that is widely encouraged by the design of interactive and increasingly low-latency cleaning interfaces such as Trifacta~\cite{trifacta}, Open Refine~\cite{openrefine}, and many others~\cite{talend,informatica,chen2014integrating}.
+As described in this paper, this process is susceptible to errors due to the mixing of dirty and clean data, model sensitivity to sample size, and the sparsity of errors.
 In fact, these underlying statistical problems are subtle and not known to most data practitioners.
-Our key insight is that an important and broad class of predictive models, called loss models (e.g., linear regression and SVMs\ewu{LDA?  etc?}), 
+Our key insight is that an important and broad class of predictive models, called loss models, 
 {\it can} be cleaned progressively {\it with guarantees} by embedding the process into an incremental optimization loop controlled by a system such as \sys.
 We hope to convey to the participants that the design of the ML development environment can be used to facilitate proper methodology.
 
-\vspace{1em}
+\vspace{0.5em}
 
-\textbf{\small This research is supported in part by NSF CISE Expeditions Award CCF-1139158, LBNL Award 7076018, and DARPA XData Award FA8750-12-2-0331, and gifts from Amazon Web Services, Google, SAP, The Thomas and Stacey Siebel Foundation, Adatao, Adobe, Apple, Inc., Blue Goji, Bosch, C3Energy, Cisco, Cray, Cloudera, EMC2, Ericsson, Facebook, Guavus, HP, Huawei, Informatica, Intel, Microsoft, NetApp, Pivotal, Samsung, Schlumberger, Splunk, Virdata and VMware.}
+\textbf{\scriptsize This research is supported in part by NSF CISE Expeditions Award CCF-1139158, LBNL Award 7076018, and DARPA XData Award FA8750-12-2-0331, and gifts from Amazon Web Services, Google, SAP, The Thomas and Stacey Siebel Foundation, Adatao, Adobe, Apple, Inc., Blue Goji, Bosch, C3Energy, Cisco, Cray, Cloudera, EMC2, Ericsson, Facebook, Guavus, HP, Huawei, Informatica, Intel, Microsoft, NetApp, Pivotal, Samsung, Schlumberger, Splunk, Virdata and VMware.}

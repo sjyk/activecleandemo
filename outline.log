@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 JAN 2016 19:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 JAN 2016 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,12 +552,12 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 File: figs/update-arch.png Graphic file (type png)
 
 <use figs/update-arch.png>
-Package pdftex.def Info: figs/update-arch.png used on input line 13.
-(pdftex.def)             Requested size: 240.0pt x 118.32848pt.
+Package pdftex.def Info: figs/update-arch.png used on input line 26.
+(pdftex.def)             Requested size: 192.00073pt x 94.66559pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
 
-Underfull \vbox (badness 4001) has occurred while \output is active []
+Underfull \vbox (badness 5217) has occurred while \output is active []
 
  [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -629,25 +629,25 @@ Package pdftex.def Info: figs/interface2.png used on input line 7.
 File: figs/interface3.png Graphic file (type png)
 
 <use figs/interface3.png>
-Package pdftex.def Info: figs/interface3.png used on input line 33.
-(pdftex.def)             Requested size: 144.00146pt x 101.2571pt.
- [3 <./figs/interface1.png> <./figs/interface2.png>]
-<figs/interface4.png, id=37, 711.1368pt x 203.8014pt>
+Package pdftex.def Info: figs/interface3.png used on input line 32.
+(pdftex.def)             Requested size: 120.0pt x 84.38351pt.
+ [3 <./figs/interface1.png> <./figs/interface2.png> <./figs/interface3.png>] <f
+igs/interface4.png, id=38, 711.1368pt x 203.8014pt>
 File: figs/interface4.png Graphic file (type png)
 
 <use figs/interface4.png>
-Package pdftex.def Info: figs/interface4.png used on input line 49.
+Package pdftex.def Info: figs/interface4.png used on input line 47.
 (pdftex.def)             Requested size: 240.0pt x 68.77844pt.
 
-<figs/interface5.png, id=38, 483.7272pt x 233.1912pt>
+<figs/interface5.png, id=39, 483.7272pt x 233.1912pt>
 File: figs/interface5.png Graphic file (type png)
 
 <use figs/interface5.png>
-Package pdftex.def Info: figs/interface5.png used on input line 62.
-(pdftex.def)             Requested size: 144.00146pt x 69.41704pt.
+Package pdftex.def Info: figs/interface5.png used on input line 59.
+(pdftex.def)             Requested size: 95.99854pt x 46.27803pt.
 ) (./proposal.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
 ) (./outline.bbl
 LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 5.
 
@@ -721,20 +721,17 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <3.75> not available
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <3.75> not available
 (Font)              size <5> substituted on input line 5.
 
-[4 <./figs/interface3.png> <./figs/interface4.png> <./figs/interface5.png>])
-[5
-
-] (./outline.aux)
+) [4 <./figs/interface4.png> <./figs/interface5.png>] (./outline.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 8058 strings out of 493315
- 112000 string characters out of 6137904
- 239311 words of memory out of 5000000
- 11250 multiletter control sequences out of 15000+600000
+ 8062 strings out of 493315
+ 112048 string characters out of 6137904
+ 240311 words of memory out of 5000000
+ 11254 multiletter control sequences out of 15000+600000
  80233 words of font info for 120 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,13n,40p,819b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -755,10 +752,10 @@ st/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on outline.pdf (5 pages, 491499 bytes).
+Output written on outline.pdf (4 pages, 491714 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

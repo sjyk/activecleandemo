@@ -3,62 +3,58 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: outline.aux
 The style file: abbrv.bst
 Database file #1: ref.bib
-Repeated entry---line 1687 of file ref.bib
- : @inproceedings{wang1999sample
- :                              ,
-I'm skipping whatever remains of this entry
 A bad cross reference---entry "xiaofeature"
 refers to entry "DBLP:conf/icml/2015", which doesn't exist
-A bad cross reference---entry "wang1999sample"
-refers to entry "DBLP:conf/sigmod/2014", which doesn't exist
 A bad cross reference---entry "DBLP:conf/case/MahlerKLSMKPWFAG14"
 refers to entry "DBLP:conf/case/2014", which doesn't exist
 A bad cross reference---entry "yakout2013don"
 refers to entry "DBLP:conf/sigmod/2013", which doesn't exist
-Warning--I didn't find a database entry for "DBLP:conf/sigmod/2014"
 Warning--I didn't find a database entry for "DBLP:conf/icml/2015"
 Warning--I didn't find a database entry for "DBLP:conf/case/2014"
 Warning--I didn't find a database entry for "DBLP:conf/sigmod/2013"
 Warning--to sort, need author or key in bdas
-You've used 13 entries,
+Warning--to sort, need author or key in trifacta
+Warning--to sort, need author or key in talend
+Warning--to sort, need author or key in informatica
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            569 strings with 6414 characters,
-and the built_in function-call counts, 4641 in all, are:
-= -- 380
-> -- 375
+            582 strings with 6637 characters,
+and the built_in function-call counts, 5257 in all, are:
+= -- 444
+> -- 371
 < -- 0
-+ -- 151
-- -- 136
-* -- 352
-:= -- 824
-add.period$ -- 38
-call.type$ -- 13
-change.case$ -- 107
++ -- 150
+- -- 132
+* -- 363
+:= -- 898
+add.period$ -- 48
+call.type$ -- 17
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 139
-empty$ -- 306
-format.name$ -- 136
-if$ -- 914
+cite$ -- 21
+duplicate$ -- 172
+empty$ -- 397
+format.name$ -- 132
+if$ -- 1072
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 9
-newline$ -- 67
-num.names$ -- 24
-pop$ -- 136
+int.to.str$ -- 17
+missing$ -- 11
+newline$ -- 84
+num.names$ -- 26
+pop$ -- 165
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 100
 quote$ -- 0
-skip$ -- 98
+skip$ -- 128
 stack$ -- 0
-substring$ -- 73
-swap$ -- 18
+substring$ -- 92
+swap$ -- 22
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 1
-while$ -- 25
-width$ -- 15
-write$ -- 130
-(There were 5 error messages)
+type$ -- 66
+warning$ -- 4
+while$ -- 27
+width$ -- 19
+write$ -- 162
+(There were 3 error messages)
