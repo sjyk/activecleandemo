@@ -7,17 +7,21 @@ Human input, either for cleaning or validation of automated cleaning, is often e
 A model can learn rules from a small set of examples cleaned (or validated) by a human, and active learning is a technique to carefully select the set of examples to learn the most accurate model.
 This model can be used to extrapolate repairs to not-yet-cleaned data, and the goal of these approaches is to provide the cleanest possible dataset--independent of the subsequent analytics or query processing.
 
-Prior work studies applying machine learning to facilitate improved data cleaning, and in contrast, \sys explores the problem of the impact of data cleaning on user-specified models.
-This new problem setting leads to questions of correctness and ``push-down" prioritization, i.e., how information about a user's subsequent data analysis (the model that is trained) can inform which data to clean.
-Existing approaches, which are designed for homogeneous data, cannot be applied here.
-One of the primary contributions of this work is an incremental model update algorithm with correctness guarantees for mixtures of data.
+\ewu{To summarize, prior work studies how to \emph{use machine learning models} to improve data cleaning.
+In contrast, \sys explores how to control the impact of data cleaning \emph{on downstream machine learning models}.
+This new problem setting leads a question of correctness -- if I incrementally clean subsets of my data, is the model I then train even correct?  
+It also leads to optimization opportunities -- how the data cleaning step be made aware of the subsequent data analysis (e.g., the model that is trained) 
+in such a way that the model will most quickly converge to the correct model?}
+Existing approaches, which are designed for homogeneous (all clean or all dirty) data, cannot be applied here.
+One of the primary contributions of this work is an incremental model update algorithm with correctness guarantees for the \ewu{resulting mixture of dirty and clean} data.
 The essence of the approach is to model the human's iterative process as a Stochastic Gradient Descent loop.
 
 \subsection{Problem Setup and Formalization}
 There is a relation $R$ and we wish to train a model using the data in $R$.
 We assume that there is a featurizer $F(\cdot)$ that maps every record $r \in R$ to a feature vector $x$ and label $y$.
-This work focuses on a class of well-analyzed predictive analytics problems; ones that can be expressed as the minimization of loss functions.
-For labeled training examples $\{(x_{i},y_{i})\}_{i=1}^{N}$, the problem is to find a vector of \emph{model parameters} $\theta$ by minimizing a loss function $\phi$ over all training examples:
+This work focuses on a class of well-analyzed predictive analytics problems
+\ewu{-- ones that can be expressed as the minimization of loss functions -- that will be trained on the output of applying $F(\cdot)$ to the records in $R$.}
+For these labeled training examples $\{(x_{i},y_{i})\}_{i=1}^{N}$, the problem is to find a vector of \emph{model parameters} $\theta$ by minimizing a loss function $\phi$ over all training examples:
 \[
  \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\phi(x_{i},y_{i},\theta)
 \]
@@ -33,9 +37,12 @@ $r(\theta)$ penalizes high or low values of feature weights in $\theta$ to avoid
  \label{ideal}
 \end{equation}
 In this work, without loss of generality, we will include the regularization as part of the loss function i.e., $\phi(x_{i},y_{i},\theta)$ includes $r(\theta)$.
+We note that designing \sys for this form of machine learning model enables \sys to work for \ewu{SVMs, logistic regression, Latent Dirchelet Analysis, whatever... Sanjay fill in popular types of models you want to name drop}.
 
 \subsection{Required User Input}\label{uinp}
-More concretely, the analyst provides the following user-defined function to use \sys:
+\ewu{In such a problem setting, \sys takes as input four user-defined functions.  The first two are used in order to train models, and can be assumed to be readily available.  
+The latter two consist of a user tunable parameters with reasonable defaults,
+and a generic record cleaning function:}
 
 \noindent\textbf{Model:} The user provides a predictive model (e.g., SVM) specified as a loss optimization problem $\phi(\cdot)$ and a featurizer $F(\cdot)$ that maps a record to its feature vector $x$ and label $y$.
 
@@ -47,7 +54,7 @@ For more complex problems such Topic Modeling or Neural Network learning, we ass
 
 \vspace{0.25em}
 
-\noindent\textbf{Batches: } Data are cleaned in batches of size $b$ and the user can change these settings if she desires more or less frequent model updates.
+\noindent\textbf{Stopping Criteria: } Data are cleaned in batches of size $b$ and the user can change these settings if she desires more or less frequent model updates.
 We empirically find that a batch size of $50$ performs well across different datasets and use that as a default.
 A cleaning budget $k$ can be used as a stopping criterion once $C(\dot)$ has been called $k$ times, and so the number of iterations of \sys is $T = \frac{k}{b}$.
 Alternatively, the user can clean data until the model is of sufficient accuracy to make a decision.
@@ -55,24 +62,19 @@ Alternatively, the user can clean data until the model is of sufficient accuracy
 \vspace{0.25em}
 
 \noindent\textbf{Cleaning Function: } We represent this operation as $Clean(\cdot)$ which can be applied to a record $r$ (or a set of records) to recover the clean record $r' = Clean(r)$.
-Formally, we treat the $Clean(\cdot)$ as an expensive user-defined function (implemented by code or by manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
+Formally, we treat the $Clean(\cdot)$ as an expensive user-defined function (implemented as code or  manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
+\ewu{This formulation supports common operations such as extraction, deletion, transformation, etc etc. FILL IN}
 
 \subsection{Basic Data Flow} \label{df}
-The system first trains the model $\phi(\cdot)$ on the dirty dataset to find an initial model $\theta^{(d)}$ that the system will subsequently improve.
-The {\it sampler} selects a sample of size $b$ records from the dataset and passes
-the sample to the {\it cleaner}, which executes $Clean(\cdot)$ for each sample record and outputs their cleaned versions.
-The \emph{updater} uses the cleaned sample to update the weights of the model, thus moving the model closer to the true cleaned model (in expectation).
-Finally, the system either terminates due to a stopping condition (e.g., $C(\cdot)$ has been called a maximum number of times $k$, or training error convergence),
-or passes control to the {\it sampler} for the next iteration.
+The following pseudocode summarizes how \sys works:
 
-  \noindent To summarize in pseudocode:
   \begin{enumerate}[leftmargin=1em]\scriptsize\sloppy
   \item \texttt{Init(dirty\_data, cleaned\_data, dirty\_model, batch, iter)}
   \item For each t in $\{1,...,T\}$
   \begin{enumerate}
-    \item \texttt{dirty\_sample $=$ sampler(dirty\_data, sample\_prob, detector, batch)}
+    \item \texttt{dirty\_sample $=$ Sampler(dirty\_data, sample\_prob, detector, batch)}
     \item \texttt{clean\_sample $=$ Cleaner(dirty\_sample)}
-    \item \texttt{current\_model $=$ Update(current\_model, sample\_prob, clean\_sample)}
+    \item \texttt{current\_model $=$ Updater(current\_model, sample\_prob, clean\_sample)}
     \item \texttt{cleaned\_data = cleaned\_data + clean\_sample}
     \item \texttt{dirty\_data = dirty\_data - clean\_sample}
     \item \texttt{sample\_prob $=$ Estimator(dirty\_data, cleaned\_data, detector)}
@@ -81,8 +83,18 @@ or passes control to the {\it sampler} for the next iteration.
   \item \texttt{Output: current\_model}
   \end{enumerate}
 
+The system first trains the model $\phi(\cdot)$ on the dirty dataset to find an initial model $\theta^{(d)}$ that the system will subsequently improve.
+The {\it Sampler} selects a sample of size $b$ records from the dataset and passes
+the sample to the {\it Cleaner}, which executes $C(\cdot)$ for each sample record \ewu{or on the whole sample?  given map/filter formulation?} and outputs their cleaned versions.
+The \emph{Updater} uses the cleaned sample to update the weights of the model, thus moving the model closer to the true cleaned model (in expectation).
+Finally, the system either terminates due to a stopping condition (e.g., $C(\cdot)$ has been called a maximum number of times $k$, or training error convergence),
+or passes control to the {\it sampler} for the next iteration.
+\ewu{Sentence about which of the functions are hard and are contributions.  }
+
+
 \subsection{Optimizations}
 We overview some of the research contributions and the details can be found in~\cite{activecleanarxiv}.
+\ewu{Tie below back to the functions in S2.4.  E.g., Festimate-Driven Prioritiation: this is an optimization on the Sampler that .... }
 
   \vspace{0.5em}
 
