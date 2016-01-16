@@ -1,9 +1,9 @@
 \section{Introduction}
 Building distributed frameworks to facilitate model training on large and growing datasets is a key data management challenge with significant interest in both industry and academia~\cite{bdas, alexandrov2014stratosphere, crotty2014tupleware, tensor}.
 While these frameworks abstract much of the difficult details of distributed Machine Learning (ML), they seldom offer the analyst any support in terms of constructing the model itself, such as which features to use or how to represent their data.
-The model construction process is still highly iterative, where through trial-and-error an analyst makes these choices eventually converging onto a model with the desired accuracy.
+The model construction process is still highly iterative, where through trial-and-error an analyst makes these choices with the hope of eventually converging onto a model with the desired accuracy.
 To further complicate matters, data often arrives \emph{dirty}, including missing, incorrect, or inconsistent attributes, due to faulty sensors, software, time delays, or hardware.
-Thus, although part of the iterative process is tweaking the model paratemers and features, a significant portion involves identifying and cleaning potentially dirty data.  
+Thus, although part of the iterative process is tweaking the model parameters and features, a significant portion involves identifying and cleaning potentially dirty data.  
 In our work, we focus on this latter issue. 
 While data cleaning is an extensively studied problem, the high dimensionality of many models can amplify even a small amount of erroneous records~\cite{xiaofeature}, and the relative complexity (in comparison to SQL analytics) can make it difficult to trace the consequnces of an error.
 
@@ -35,11 +35,11 @@ In other words, it is often not obvious how an analyst should select which recor
 As it stands, there are two key problems in interactive model construction, (1) correctness, and (2) dirty data identification.
 We address these to problems in a system called \sys which facilitates interactive training-cleaning iteration in a safe way (with expected monotone convergence guarantees) and automatically selects the most valuable data for the analyst to inspect even in the complex models popular in modern ML pipelines.
 The selection technique applied in \sys uses pointwise gradients to generalize the outlier filtering heuristics to select potentially dirty data even in complex models. 
-The analyst initializes an \sys with an ML model, a featurization function, and the base data, and the \sys initially returns the model trained on the dataset.
+The analyst initializes \sys with an ML model, a featurization function, and the base data, and \sys initially returns the model trained on the dataset.
 \sys also returns an array of data sampled from the model that are possibly dirty.
 The analyst can apply any value transformations to the data and then prompt the system to iterate. 
 
-In contrast, \sys prioritizes data cleaning by identifying records, which if cleaned, are likely to change the analyst's model predictions.
+In contrast \ewu{to active learning, which asks users to label the most uncertain data points,} \sys prioritizes data cleaning by identifying records, which if cleaned, are likely to change the model's predictions.
 \sys applies to a large class of models which can be represented as loss minimization problems solved by gradient descent.
 This captures SVMs, Linear Regression, Neural Netorks (Deep Learning), and some types of topic modeling problems such as LDA (for a formal description see \cite{activecleanarxiv}).
 We demonstrate \sys with a visual interface allows analysts to debug complex ML models and understand the effects of dirty data.

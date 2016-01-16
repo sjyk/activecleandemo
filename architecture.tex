@@ -41,7 +41,9 @@ More concretely, the analyst provides the following user-defined function to use
 
 \vspace{0.25em}
 
-\noindent\textbf{Gradient:} The user provides a gradient function $\nabla\phi(\cdot)$ that returns the gradient of the loss. For popular convex models such as SVMs and Linear Regression these functions are known and easy to express analytically. For more complex problems such Topic Modeling or Neural Network learning, we assume that this function (or an approximation of it) is expressed programatically. There are a number of frameworks such as Torch, Theano, and TensorFlow, which can return such programs using symbolic differentiation. 
+\noindent\textbf{Gradient:} The gradient function $\nabla\phi(\cdot)$ returns the gradient of the loss. 
+For popular convex models such as SVMs and Linear Regression these functions are known and provided as part of the system. 
+For more complex problems such Topic Modeling or Neural Network learning, we assume that this function (or an approximation of it) is expressed programatically. There are a number of frameworks such as Torch, Theano, and TensorFlow, which can return such programs using symbolic differentiation. 
 
 \vspace{0.25em}
 
