@@ -1,10 +1,18 @@
 \section{Introduction}
+<<<<<<< HEAD
 Model training on large and growing datasets is a key data management challenge with significant interest in both industry and academia~\cite{bdas, alexandrov2014stratosphere, crotty2014tupleware, tensor}.
 While these frameworks abstract much of the difficult details of distributed Machine Learning (ML), they seldom offer the analyst support in terms of constructing the model itself, such as which features to use or how to represent their data.
 The model construction process is still highly iterative, where through trial-and-error, an analyst makes these choices. 
 %Eventually she converges onto a model with the desired accuracy.
 To further complicate matters, data are often \emph{dirty}, including missing, incorrect, or inconsistent attributes, due to faulty sensors, software, time delays, or hardware.
 Thus, although part of the iterative process is tweaking the model paratemers and features, a significant portion involves identifying and cleaning potentially dirty data.  
+=======
+Building distributed frameworks to facilitate model training on large and growing datasets is a key data management challenge with significant interest in both industry and academia~\cite{bdas, alexandrov2014stratosphere, crotty2014tupleware, tensor}.
+While these frameworks abstract much of the difficult details of distributed Machine Learning (ML), they seldom offer the analyst any support in terms of constructing the model itself, such as which features to use or how to represent their data.
+The model construction process is still highly iterative, where through trial-and-error an analyst makes these choices with the hope of eventually converging onto a model with the desired accuracy.
+To further complicate matters, data often arrives \emph{dirty}, including missing, incorrect, or inconsistent attributes, due to faulty sensors, software, time delays, or hardware.
+Thus, although part of the iterative process is tweaking the model parameters and features, a significant portion involves identifying and cleaning potentially dirty data.  
+>>>>>>> 41697e64b207cc2028bea92227184e487e04a2be
 In our work, we focus on this latter issue. 
 While data cleaning is an extensively studied problem, the high dimensionality of many models can amplify even a small amount of erroneous records~\cite{xiaofeature}, and the relative complexity (in comparison to SQL analytics) can make it difficult to trace the consequnces of an error.
 
