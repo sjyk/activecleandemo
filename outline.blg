@@ -3,55 +3,62 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: outline.aux
 The style file: abbrv.bst
 Database file #1: ref.bib
+Repeated entry---line 1687 of file ref.bib
+ : @inproceedings{wang1999sample
+ :                              ,
+I'm skipping whatever remains of this entry
 A bad cross reference---entry "xiaofeature"
 refers to entry "DBLP:conf/icml/2015", which doesn't exist
+A bad cross reference---entry "wang1999sample"
+refers to entry "DBLP:conf/sigmod/2014", which doesn't exist
 A bad cross reference---entry "DBLP:conf/case/MahlerKLSMKPWFAG14"
 refers to entry "DBLP:conf/case/2014", which doesn't exist
 A bad cross reference---entry "yakout2013don"
 refers to entry "DBLP:conf/sigmod/2013", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/sigmod/2014"
 Warning--I didn't find a database entry for "DBLP:conf/icml/2015"
 Warning--I didn't find a database entry for "DBLP:conf/case/2014"
 Warning--I didn't find a database entry for "DBLP:conf/sigmod/2013"
 Warning--to sort, need author or key in bdas
-You've used 12 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            563 strings with 6012 characters,
-and the built_in function-call counts, 4114 in all, are:
-= -- 340
-> -- 321
+            569 strings with 6414 characters,
+and the built_in function-call counts, 4641 in all, are:
+= -- 380
+> -- 375
 < -- 0
-+ -- 129
-- -- 116
-* -- 305
-:= -- 731
-add.period$ -- 35
-call.type$ -- 12
-change.case$ -- 94
++ -- 151
+- -- 136
+* -- 352
+:= -- 824
+add.period$ -- 38
+call.type$ -- 13
+change.case$ -- 107
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 125
-empty$ -- 278
-format.name$ -- 116
-if$ -- 813
+cite$ -- 14
+duplicate$ -- 139
+empty$ -- 306
+format.name$ -- 136
+if$ -- 914
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 8
-newline$ -- 62
-num.names$ -- 22
-pop$ -- 119
+int.to.str$ -- 13
+missing$ -- 9
+newline$ -- 67
+num.names$ -- 24
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 94
 quote$ -- 0
-skip$ -- 91
+skip$ -- 98
 stack$ -- 0
-substring$ -- 67
-swap$ -- 16
+substring$ -- 73
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 52
 warning$ -- 1
-while$ -- 23
-width$ -- 14
-write$ -- 120
-(There were 3 error messages)
+while$ -- 25
+width$ -- 15
+write$ -- 130
+(There were 5 error messages)
