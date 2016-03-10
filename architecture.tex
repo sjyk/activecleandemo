@@ -4,11 +4,10 @@ We will first describe \sys and overview the entire framework, and a detailed de
 \subsection{What Is New?}
 Machine learning, specifically active learning, has been applied in prior work to improve the efficiency of data cleaning~\cite{yakout2013don,DBLP:journals/pvldb/YakoutENOI11,gokhale2014corleone}.
 Human input, either for cleaning or validation of automated cleaning, is often expensive and impractical for large datasets.
-A model can learn rules from a small set of examples cleaned (or validated) by a human, and active learning is a technique to carefully select the set of examples to learn the most accurate model.
-This model can be used to extrapolate repairs to not-yet-cleaned data, and the goal of these approaches is to provide the cleanest possible dataset--independent of the subsequent analytics or query processing.
-
-To summarize, prior work studies how to \emph{use machine learning models} to improve data cleaning.
+An ML model can be used to extrapolate repairs to not-yet-cleaned data, and the goal of these approaches is to provide the cleanest possible dataset--independent of the subsequent analytics or query processing.
+Prior work studies how to \emph{use machine learning models} to improve data cleaning.
 In contrast, \sys explores how to control the impact of data cleaning for downstream machine learning models.
+
 This new problem setting leads a question of correctness -- if I incrementally clean subsets of my data, is the model I then train even correct?  
 It also leads to optimization opportunities -- how can the data cleaning step be made aware of the subsequent data analysis (e.g., the model that is trained) 
 in such a way that the model will most quickly converge to the correct model?
@@ -17,25 +16,24 @@ One of the primary contributions of this work is an incremental model update alg
 The essence of the approach is to model the human's iterative process as a Stochastic Gradient Descent loop.
 
 \subsection{Problem Setup and Formalization}
-There is a relation $R$ and we wish to train a model using the data in $R$.
-We assume that there is a featurizer $F(\cdot)$ that maps every record $r \in R$ to a feature vector $x$ and label $y$.
+We assume that there is a featurizer $F(\cdot)$ that maps every record in a dataset $r \in R$ to a feature vector $x$ and label $y$.
 This work focuses on a class of well-analyzed predictive analytics problems, ones that can be expressed as the minimization of loss functions, that will be trained on the output of applying $F(\cdot)$ to the records in $R$.
-For these labeled training examples $\{(x_{i},y_{i})\}_{i=1}^{N}$, the problem is to find a vector of \emph{model parameters} $\theta$ by minimizing a loss function $\phi$ over all training examples:
+For these labeled training examples $\{(x_{i},y_{i})\}_{i=1}^{N}$, the problem is to find a vector of \emph{model parameters} $\theta$ by minimizing a loss function $\ell$ over all training examples:
 \[
- \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\phi(x_{i},y_{i},\theta)
+ \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\ell(x_{i},y_{i};\theta)
 \]
 Where $\phi$ is a convex function in $\theta$.
 For example, in a linear regression $\phi$ is:
 \[
-\phi(x_{i},y_{i},\theta) = \|\theta^Tx_{i} - y_i \|_2^2
+\ell(x_{i},y_{i},\theta) = \|\theta^Tx_{i} - y_i \|_2^2
 \]
 Typically, a \emph{regularization} term $r(\theta)$ is added to this problem.
 $r(\theta)$ penalizes high or low values of feature weights in $\theta$ to avoid overfitting to noise in the training examples.
 \begin{equation}
- \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\phi(x_{i},y_{i},\theta) + r(\theta)
+ \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\ell(x_{i},y_{i};\theta) + r(\theta)
  \label{ideal}
 \end{equation}
-In this work, without loss of generality, we will include the regularization as part of the loss function i.e., $\phi(x_{i},y_{i},\theta)$ includes $r(\theta)$.
+In this work, without loss of generality, we will include the regularization as part of the loss function i.e., $\ell(x_{i},y_{i};\theta)$ includes $r(\theta)$.
 We note that designing \sys for this form of machine learning model supports SVMs, Linear Regression, Logistic Regression, Neural Networks, Latent Dirichlet Allocation, and Gaussian Mixture Models.
 
 \subsection{Required User Input}\label{uinp}
@@ -43,11 +41,11 @@ In such a problem setting, \sys takes as input four user-defined parameters.  Th
 The latter two consist of a user tunable parameters with reasonable defaults,
 and a generic record cleaning function implemented by script or by manual effort:
 
-\noindent\textbf{Model:} The user provides a predictive model (e.g., SVM) specified as a loss optimization problem $\phi(\cdot)$ and a featurizer $F(\cdot)$ that maps a record to its feature vector $x$ and label $y$.
+\noindent\textbf{Model:} The user provides a predictive model (e.g., SVM) specified as a loss optimization problem $\ell(\cdot)$ and a featurizer $F(\cdot)$ that maps a record to its feature vector $x$ and label $y$.
 
 \vspace{0.25em}
 
-\noindent\textbf{Gradient:} The gradient function $\nabla\phi(\cdot)$ returns the gradient of the loss. 
+\noindent\textbf{Gradient:} The gradient function $\nabla\ell(\cdot)$ returns the gradient of the loss. 
 For popular convex models such as SVMs and Linear Regression these functions are known and provided as part of the system. 
 For more complex problems such Topic Modeling or Neural Network learning, we assume that this function (or an approximation of it) is expressed programatically. There are a number of frameworks such as Torch, Theano, and TensorFlow, which can return such programs using symbolic differentiation. 
 
@@ -60,8 +58,8 @@ Alternatively, the user can clean data until the model is of sufficient accuracy
 
 \vspace{0.25em}
 
-\noindent\textbf{Cleaning Function: } We represent this operation as $Clean(\cdot)$ which can be applied to a record $r$ (or a set of records) to recover the clean record $r' = Clean(r)$.
-Formally, we treat the $Clean(\cdot)$ as an expensive user-defined function (implemented as code or  manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
+\noindent\textbf{Cleaning Function: } We represent this operation as $C(\cdot)$ which can be applied to a record $r$ (or a set of records) to recover the clean record $r' = C(r)$.
+Formally, we treat the $C(\cdot)$ as an expensive user-defined function (implemented as code or  manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
 This formulation supports common operations such as extraction, deletion, transformation, and find-and-replace.
 
 \subsection{Basic Data Flow} \label{df}
@@ -82,7 +80,7 @@ The following pseudocode summarizes how \sys works:
   \item \texttt{Output: current\_model}
   \end{enumerate}
 
-The system first trains the model $\phi(\cdot)$ on the dirty dataset to find an initial model $\theta^{(d)}$ that the system will subsequently improve.
+The system first trains the model $\ell(\cdot)$ on the dirty dataset to find an initial model $\theta^{(d)}$ that the system will subsequently improve.
 The {\it Sampler} selects a sample of size $b$ records from the dataset and passes
 the sample to the {\it Cleaner}, which executes $C(\cdot)$ on the whole sample and outputs their cleaned versions.
 The \emph{Updater} uses the cleaned sample to update the weights of the model, thus moving the model closer to the true cleaned model (in expectation).
@@ -95,14 +93,36 @@ We overview some of the research contributions and the details can be found in~\
 
   \vspace{0.5em}
 
-  \noindent\textbf{Updater (Incremental Gradient Method): } Rather than retraining, in \sys, we start with a dirty model as an initialization, and then incrementally make an update using a gradient step.
-  This process leverages the structure of the model rather than treating it like a black-box, and we apply convergence arguments from optimization theory.
+  \noindent\textbf{Updater (Incremental Gradient Method): } Rather than retraining, in \sys, we start with a dirty model as an initialization $\theta_d$, and then incrementally make an update using a gradient step.This process leverages the structure of the model rather than treating it like a black-box, and we apply convergence arguments from optimization theory.
+
+Suppose, we model the cleaner $C(\cdot)$ as an oracle that maps a dirty example $(x_i,y_i)$ to a clean example $(x_i',y_i')$.
+Ideally, we would like to be able to solve the following problem:
+\[
+\arg\min_{\theta \in \Theta} \sum_{i=1}^N \ell(C(x_i,y_i);\theta)
+\]
+This minimization problem can be solved with an algorithm called Stochastic Gradient Descent, which iteratively samples data, estimates a gradient, and updates the current best model.
+We can represent the iterative cleaning process similarly where the gradient is estimated from newly cleaned batches of data:
+\[
+\theta^{(0)} \leftarrow \theta_d^{*}
+\]
+\[
+\theta^{(t+1)} = \theta^{(t)} - \lambda \cdot \mathbf{w}
+\]
+where $\mathbf{w}$ is an unbiased estimate of the gradient with $\mathbf{E}[\mathbf{w}]=\sum_i^N\nabla \ell(C(x_i,y_i);\theta^{(t)})$.
+If iterated to infinity, this procedure will converge to the correct value $\theta_c^*$ with rate $O(\frac{1}{t})$ for strongly convex functions and $O(\frac{1}{\sqrt{t}})$ for general convex functions and avoids the pitfalls of Simpson's paradox.
+There are a number of subtleties which we discuss in the technical report such as re-sampling already cleaned data and selecting batch sizes. 
 
   \vspace{0.5em}
 
-  \noindent\textbf{Sampler (Importance Sampling): } We use an importance sampling technique to select a sample of likely dirty records. This is designed in a way so it still preserves convergence guarantees.
-
-  \vspace{0.5em}
-
-  \noindent\textbf{Detector (Partitioning): } \sys adaptively learns to partition dirty and clean data based on the analysts actions.
-  Partitioning serves two purposes: (1) it reduces the variance of our updates because we can cheaply scan over data we know that is clean, and (2) it increases the fraction of actually dirty records in the candidate batch.
+  \noindent\textbf{Sampler (Importance Sampling): } We use an importance sampling technique to select a sample of likely dirty records. The necessary conditions for convergence are $\mathbf{E}[\mathbf{w}]=\sum_i^N\nabla \ell(C(x_i);\theta^{(t)})$ and there is nothing that enforces that we must uniformly sample the data.
+We can apply a technique called importance sampling which allows us to calculate expectations with respect to one distribution $q(\cdot)$ while sampling from another with the same support $p(\cdot)$. 
+\[\mathbf{E}_{X~q}[X] = \sum_{x \in X} x \frac{q(x)}{p(x)} \]
+What this means for our problem is that we can define any sampling distribution $p(\cdot)$ over $X$ as long as $p(\cdot) > 0$:
+\[
+\mathbf{w} = \frac{|X|}{b} \sum_{i=1}^{b} \frac{1}{p(i)} \nabla\ell(C(x_i,y_i);\theta^{(t)})
+\]
+While all of the distributions will have the same expected values, their variances will differ.
+We can show that an approximation for the distribution that minimizes the variance is simply:
+\[
+p(i) \propto \|\nabla\ell(x_i,y_i;\theta^{(t)})\|
+\]

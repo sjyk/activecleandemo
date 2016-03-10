@@ -121,29 +121,32 @@
 \pagestyle{plain}
 
 %\title{ActiveClean: Progressive Data Cleaning For Convex Data Analytics}
-\title{ActiveClean:  Interactive Data Cleaning For Modern Machine Learning}
+\title{ActiveClean:  An Interactive Data Cleaning Framework For Machine Learning}
 
 \numberofauthors{1}
-\author{\large Sanjay Krishnan{$\,^*$}, Michael J. Franklin{$\,^*$}, Ken Goldberg{$\,^*$}, Eugene Wu{$\,^\dag$}\\
-\vspace{.2em}\affaddr{\large UC Berkeley$\,^*$, ~~ $^\dag$Columbia University} \\
-\vspace{.1em}\affaddr{\large \{sanjaykrishnan, franklin, goldberg\}@berkeley.edu, ewu@cs.columbia.edu}\\
+\author{\large Sanjay Krishnan{$\,^*$}, Michael J. Franklin{$\,^*$}, Ken Goldberg{$\,^*$}, Jiannan Wang{$\,^{**}$}, Eugene Wu{$\,^\dag$}\\
+\vspace{.2em}\affaddr{\large $\,^*$UC Berkeley,~~ $^\dag$Columbia University, ~~ $^{**}$Simon Fraser University} \\
+\vspace{.1em}\affaddr{\large \{sanjaykrishnan, franklin, goldberg\}@berkeley.edu, ewu@cs.columbia.edu, jnwang@sfu.edu.ca}\\
 }
 
 %\fontsize{9pt}{11pt}
 %\selectfont
 
+\setlength{\belowdisplayskip}{2pt} \setlength{\belowdisplayshortskip}{2pt}
+\setlength{\abovedisplayskip}{2pt} \setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowcaptionskip}{-10pt}
+\selectfont
+
 
 \maketitle
 
 \begin{abstract}
-Databases are susceptible to various forms of corruption, or \emph{dirtiness}, such as missing, incorrect, or inconsistent values.
-Increasingly, modern data analysis pipelines involve Machine Learning for predictive models which can be sensitive to dirty data.
-Dirty data is often expensive to repair, and naive sampling solutions are not suited for training high dimensional models.
-We propose \sysfull, an anytime framework for training Machine Learning models with budgeted data cleaning.
-Our framework updates a model iteratively as small samples of data are cleaned, and includes numerous optimizations such as importance weighting and dirty data detection.
-In this demonstration, we designed a visual interface to wrap around this framework and demonstrate \sys for a video classification problem and a topic modeling problem. 
-%The key insight of \sys is that data cleaning can be applied simultaneously with incremental optimization allowing for progressive cleaning while preserving provable properties.
-%In one set of experiments with 5\% simulated error, \sys cleans 55\% fewer records to achieve the same accuracy as an Active Learning algorithm.
+Databases can be corrupted with various errors such as missing, incorrect, or inconsistent values.
+Increasingly, modern data analysis pipelines involve Machine Learning, and the effects of  dirty data can be difficult to debug.
+Dirty data is often sparse, and naive sampling solutions are not suited for high-dimensional models.
+We propose \sysfull, an anytime framework for training Machine Learning models with data cleaning.
+Our framework updates a model iteratively as the analyst cleans small batches of data, and includes numerous optimizations such as importance weighting and dirty data detection.
+We designed a visual interface to wrap around this framework and demonstrate \sys for a video classification problem and a topic modeling problem. 
 \end{abstract}
 
 \if{0}

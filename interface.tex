@@ -3,8 +3,8 @@ Next, we will describe the components of the \sys interface used in this demonst
 
 \begin{figure}[t]
 \centering
- \includegraphics[width=0.48\columnwidth]{figs/interface1.png}
- \includegraphics[width=0.48\columnwidth]{figs/interface2.png}
+ \includegraphics[width=0.49\columnwidth]{figs/interface1.png}
+ \includegraphics[width=0.46\columnwidth]{figs/interface2.png}
  \caption{Initialization. The analyst loads user-defined model functions into \sys and then trains an initial model on the dirty data \label{irun}}
 \end{figure}
 
@@ -29,8 +29,9 @@ The analyst can select examples from the plot for further inspection.
 
 \begin{figure}[t]
 \centering
- \includegraphics[width=0.5\columnwidth]{figs/interface3.png}
- \caption{The diagnose interface. The analyst can select and inspect suspect data. \label{diag}}
+ \includegraphics[width=0.7\columnwidth]{figs/interface3.png}
+ \caption{Diagnose Interface (above): The analyst can select and inspect suspect data. 
+ Cleaning Interface (below): The analyst can choose to remove data, write a custom cleaning operation, or automatically clean the data using an existing cleaning operation.\label{diag}}
 \end{figure}
 
 \subsection{Cleaning Interface}
@@ -42,20 +43,6 @@ Custom cleaning operations are added to the library to help taxonomize different
 This also provides a hint about which data are similarly corrupted (and thus fixed), we can guide future samples to draw similar data in future samples.
 We do this by training a classifier to learn the conditions for when the operation is applicable to a record, the details are described in our technical report~\cite{activecleanarxiv}.
 
-\begin{figure}[t]
-\centering
- \includegraphics[width=\columnwidth]{figs/interface4.png}
- \caption{Cleaning Interface. The analyst can choose to remove data, write a custom cleaning operation, or automatically clean the data using an existing cleaning operation.}
-\end{figure}
-
-\subsection{Iteration and Updates}
-Finally, after the data sample is cleaned, \sys updates the current best model, and re-runs the cross-validation to visualize changes in the model accuracy (Figure~\ref{modelacc}).
+Finally, after the data sample is cleaned, \sys updates the current best model, and re-runs the cross-validation to visualize changes in the model accuracy.
 At this point, \sys begins a new iteration by drawing a new sampling of records to show the analyst.  
 Once \sys satisfies the stopping conditions, the current best model parameters along with the (partially) cleaned dataset are returned to the analyst.
-
-
-\begin{figure}[t]
-\centering
- \includegraphics[width=0.4\columnwidth]{figs/interface5.png}
- \caption{Update Visualization. We visualize the changes in model accuracy after data cleaning.}\label{modelacc}
-\end{figure}
