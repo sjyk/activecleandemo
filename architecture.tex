@@ -17,7 +17,7 @@ The essence of the approach is to model the human's iterative process as a Stoch
 
 \subsection{Problem Setup and Formalization}
 We assume that there is a featurizer $F(\cdot)$ that maps every record in a dataset $r \in R$ to a feature vector $x$ and label $y$.
-This work focuses on a class of well-analyzed predictive analytics problems, ones that can be expressed as the minimization of loss functions, that will be trained on the output of applying $F(\cdot)$ to the records in $R$.
+This work focuses on a class of well-analyzed predictive analytics problems, ones that can be expressed as the minimization of loss functions, which will be trained on the output of applying $F(\cdot)$ to the records in $R$.
 For these labeled training examples $\{(x_{i},y_{i})\}_{i=1}^{N}$, the problem is to find a vector of \emph{model parameters} $\theta$ by minimizing a loss function $\ell$ over all training examples:
 \[
  \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\ell(x_{i},y_{i};\theta)
@@ -37,8 +37,8 @@ In this work, without loss of generality, we will include the regularization as 
 We note that designing \sys for this form of machine learning model supports SVMs, Linear Regression, Logistic Regression, Neural Networks, Latent Dirichlet Allocation, and Gaussian Mixture Models.
 
 \subsection{Required User Input}\label{uinp}
-In such a problem setting, \sys takes as input four user-defined parameters.  The first two are UDFs used in order to train models, and can be assumed to be readily available.  
-The latter two consist of a user tunable parameters with reasonable defaults,
+In such a problem setting, \sys takes as input four user-defined parameters.  The first two are UDFs used to train models, and can be assumed to be readily available.  
+The latter two consist of a user-tunable parameters with reasonable defaults,
 and a generic record cleaning function implemented by script or by manual effort:
 
 \noindent\textbf{Model:} The user provides a predictive model (e.g., SVM) specified as a loss optimization problem $\ell(\cdot)$ and a featurizer $F(\cdot)$ that maps a record to its feature vector $x$ and label $y$.
@@ -47,7 +47,7 @@ and a generic record cleaning function implemented by script or by manual effort
 
 \noindent\textbf{Gradient:} The gradient function $\nabla\ell(\cdot)$ returns the gradient of the loss. 
 For popular convex models such as SVMs and Linear Regression these functions are known and provided as part of the system. 
-For more complex problems such Topic Modeling or Neural Network learning, we assume that this function (or an approximation of it) is expressed programatically. There are a number of frameworks such as Torch, Theano, and TensorFlow, which can return such programs using symbolic differentiation. 
+For more complex problems such Topic Modeling or Neural Network learning, we assume that this function (or an approximation of it) is expressed programmatically. There are many frameworks such as Torch, Theano, and TensorFlow, which can return such programs using symbolic differentiation. 
 
 \vspace{0.25em}
 
@@ -59,7 +59,7 @@ Alternatively, the user can clean data until the model is of sufficient accuracy
 \vspace{0.25em}
 
 \noindent\textbf{Cleaning Function: } We represent this operation as $C(\cdot)$ which can be applied to a record $r$ (or a set of records) to recover the clean record $r' = C(r)$.
-Formally, we treat the $C(\cdot)$ as an expensive user-defined function (implemented as code or  manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
+Formally, we treat the $C(\cdot)$ as an expensive user-defined function (implemented as code or manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
 This formulation supports common operations such as extraction, deletion, transformation, and find-and-replace.
 
 \subsection{Basic Data Flow} \label{df}
@@ -89,11 +89,11 @@ or passes control to the {\it sampler} for the next iteration.
 \sys assumes that {\it Init} and {\it Cleaner} are user-specified, and it implements all of the other functions.
 
 \subsection{Technical Details}
-We overview some of the research contributions and the details can be found in~\cite{activecleanarxiv}.
+We overview some of the research contributions, and the details can be found in~\cite{activecleanarxiv}.
 
   \vspace{0.5em}
 
-  \noindent\textbf{Updater (Incremental Gradient Method): } Rather than retraining, in \sys, we start with a dirty model as an initialization $\theta_d$, and then incrementally make an update using a gradient step.This process leverages the structure of the model rather than treating it like a black-box, and we apply convergence arguments from optimization theory.
+  \noindent\textbf{Updater (Incremental Gradient Method): } Rather than retraining, in \sys, we start with a dirty model as an initialization $\theta_d$, and then incrementally make an update using a gradient step.This process leverages the structure of the model rather than treating it as a black-box, and we apply convergence arguments from optimization theory.
 
 Suppose, we model the cleaner $C(\cdot)$ as an oracle that maps a dirty example $(x_i,y_i)$ to a clean example $(x_i',y_i')$.
 Ideally, we would like to be able to solve the following problem:
@@ -110,7 +110,7 @@ We can represent the iterative cleaning process similarly where the gradient is 
 \]
 where $\mathbf{w}$ is an unbiased estimate of the gradient with $\mathbf{E}[\mathbf{w}]=\sum_i^N\nabla \ell(C(x_i,y_i);\theta^{(t)})$.
 If iterated to infinity, this procedure will converge to the correct value $\theta_c^*$ with rate $O(\frac{1}{t})$ for strongly convex functions and $O(\frac{1}{\sqrt{t}})$ for general convex functions and avoids the pitfalls of Simpson's paradox.
-There are a number of subtleties which we discuss in the technical report such as re-sampling already cleaned data and selecting batch sizes. 
+There are some subtleties which we discuss in the technical report such as re-sampling already cleaned data and selecting batch sizes. 
 
   \vspace{0.5em}
 
@@ -126,3 +126,4 @@ We can show that an approximation for the distribution that minimizes the varian
 \[
 p(i) \propto \|\nabla\ell(x_i,y_i;\theta^{(t)})\|
 \]
+

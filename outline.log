@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 MAR 2016 00:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 MAR 2016 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,38 +548,16 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 141.
 
-(./introduction.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
-
-
-LaTeX Warning: Citation `bdas' on page \thepage  undefined on input line 2.
-
-<figs/update-arch.png, id=1, 623.4492pt x 307.3884pt>
+(./introduction.tex <figs/update-arch.png, id=1, 623.4492pt x 307.3884pt>
 File: figs/update-arch.png Graphic file (type png)
 
 <use figs/update-arch.png>
 Package pdftex.def Info: figs/update-arch.png used on input line 26.
-(pdftex.def)             Requested size: 192.00073pt x 94.66559pt.
+(pdftex.def)             Requested size: 167.99927pt x 82.8318pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
 
-
-LaTeX Warning: Citation `krishnan2015svc' on page \thepage  undefined on input 
-line 39.
-
-
-LaTeX Warning: Citation `wang1999sample' on page \thepage  undefined on input l
-ine 39.
-
-
-LaTeX Warning: Citation `DBLP:journals/pvldb/HaasKWF015' on page \thepage  unde
-fined on input line 39.
-
-
-LaTeX Warning: Citation `DBLP:journals/debu/KrishnanWFGKM015' on page \thepage 
- undefined on input line 39.
-
-
-Underfull \vbox (badness 5217) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -645,14 +623,14 @@ Underfull \hbox (badness 1635) in paragraph at lines 117--119
 \T1/ptm/m/n/9 tance sam-pling tech-nique to se-lect a sam-ple of likely dirty
  []
 
-) (./interface.tex <figs/interface1.png, id=24, 483.2454pt x 336.7782pt>
+) (./interface.tex <figs/interface1.png, id=25, 483.2454pt x 336.7782pt>
 File: figs/interface1.png Graphic file (type png)
 
 <use figs/interface1.png>
 Package pdftex.def Info: figs/interface1.png used on input line 6.
 (pdftex.def)             Requested size: 117.60132pt x 81.95381pt.
 
-<figs/interface2.png, id=25, 483.7272pt x 365.2044pt>
+<figs/interface2.png, id=26, 483.7272pt x 365.2044pt>
 File: figs/interface2.png Graphic file (type png)
 
 <use figs/interface2.png>
@@ -667,7 +645,7 @@ Package pdftex.def Info: figs/interface3.png used on input line 32.
 (pdftex.def)             Requested size: 167.99927pt x 134.53346pt.
 ) (./proposal.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 36.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 35.
 ) (./outline.bbl
 LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 29.
 
@@ -746,9 +724,6 @@ LaTeX Font Warning: Font shape `U/lasy/m/n' in size <3.75> not available
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  8050 strings out of 493315
@@ -776,7 +751,7 @@ ype1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on outline.pdf (4 pages, 473258 bytes).
+Output written on outline.pdf (4 pages, 473375 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

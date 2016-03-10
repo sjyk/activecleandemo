@@ -59,6 +59,11 @@ P.~Spark.
 \newblock
   \url{https://spark.apache.org/docs/0.9.0/python-programming-guide.html}.
 
+\bibitem{bdas}
+A.~UC~Berkeley.
+\newblock Berkeley data analytics stack.
+\newblock \url{https://amplab.cs.berkeley.edu/software/}.
+
 \bibitem{van2008visualizing}
 L.~Van~der Maaten and G.~Hinton.
 \newblock Visualizing data using t-sne.

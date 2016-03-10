@@ -1,31 +1,30 @@
 \section{Demonstration Proposal}
-In our demonstration, we will highlight both ActiveClean's overall efficacy on real large-scale scientific datasets, as well as provide the 
-user with hands-on experience working in the clean-validate-retrain loop that is part of ActiveClean.  
+In our demonstration, we will highlight both ActiveClean's overall efficacy on real large-scale scientific datasets, as well as provide the user with hands-on experience working in the clean-validate-retrain loop that is part of ActiveClean.  
 %For the latter, users will clean a dataset they have not encountered, which we hope accentuates the value of an automatic, prioritized sample selection algorithm. 
-Overall, the demon is intended to show how \sys quickly improves the accuracy of the examples presented in the introduction.
+Overall, the demo is intended to show how \sys quickly improves the accuracy of the examples presented in the introduction.
 
 To this end, we will first run a head-to-head comparison between \sys and naive Active Learning in automatic mode -- the participant will pick the example setting and see an animation as both algorithms proceed in real-time.
 The demo will automatically walk through all of the key panels of the interface, using full-scale instantiations of the models and datasets.
 %As part of this process, the demo will execute the iterative cleaning loop automatically (by taking a sample, running a pre-defined cleaning function, updating the model, and repeating), 
 % and visualize statistics about the number of records cleaned, the model accuracies, and so on.
 As part of this process, both algorithms will select samples of dirty data points, automatically clean the points by replacing incorrect values with ground-truth, and retrain the model.  
-The visualization of the cross-validation accuracy, as well as the diagnosis interface, will be updated in real time, so that participants can visually compare the progress of both ActiveClean and
+The visualization of the cross-validation accuracy, as well as the diagnosis interface, will be updated in real time so that participants can visually compare the progress of both ActiveClean and
 the Active Learning algorithms in a real scenario.
 
-% The user will be able to see how quickly the model  present an animation of ActiveClean running automatically.
+% The user will be able to see how quickly the model present an animation of ActiveClean running automatically.
 % screen animation of how an analyst can use \sys with either one of these scenarios.
 % This will walk through all of the key panels of the interface and show real instantiations of models, gradients, and featurization.
 % This will serve to be an introduction to the system and will demonstrate it's performance in real scenarios.
 
 
 After the automatic mode is complete, participants will have hands-on experience with \sys.
-We will present a simplified dataset and model with artificial errors that is small enough to fully clean in a minute or two.
+We will present a simplified dataset and model with artificial errors that is small enough to clean entirely in a minute or two.
 Participants will be able to train an SVM and manually clean samples of data using ActiveClean for a binary classification task.
 This will illustrate the tradeoffs and usability of the system.
 
 \section{Conclusion}
-Building and training high quality machine learning models is hard, and doing so in the context of dirty data is painful.
-When presented with large, dirty datasets, practitioners often complaint that it is difficult to even know where to start the cleaning process.
+Building and training high-quality machine learning models is hard, and doing so in the context of dirty data is painful.
+When presented with large, dirty datasets, practitioners often complain that it is difficult to know where to start the cleaning process.
 Worse, this process is often manual and makes fully cleaning the entire dataset impractical.  
 Our key insight is that an important and broad class of predictive models, called loss models, 
 {\it can} be cleaned progressively {\it with guarantees} by embedding the process into an incremental optimization loop controlled by a system such as \sys.
