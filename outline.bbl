@@ -1,38 +1,16 @@
 \begin{thebibliography}{10}
 
-\bibitem{bdas}
-Berkeley data analytics stack.
-\newblock \url{https://amplab.cs.berkeley.edu/software/}.
-
-\bibitem{informatica}
-Informatica.
-\newblock \url{https://www.informatica.com}.
-
-\bibitem{talend}
-Talend.
-\newblock \url{https://www.talend.com/solutions/etl-analytics}.
-
-\bibitem{trifacta}
-Trifacta.
-\newblock \url{http://www.trifacta.com}.
-
 \bibitem{alexandrov2014stratosphere}
 A.~Alexandrov, R.~Bergmann, S.~Ewen, J.~Freytag, F.~Hueske, A.~Heise, O.~Kao,
   M.~Leich, U.~Leser, V.~Markl, F.~Naumann, M.~Peters, A.~Rheinl{\"{a}}nder,
   M.~J. Sax, S.~Schelter, M.~H{\"{o}}ger, K.~Tzoumas, and D.~Warneke.
 \newblock The stratosphere platform for big data analytics.
-\newblock {\em {VLDB} J.}, 23(6), 2014.
-
-\bibitem{chen2014integrating}
-Z.~Chen and M.~Cafarella.
-\newblock Integrating spreadsheet data via accurate and low-effort extraction.
-\newblock In {\em Proceedings of the 20th ACM SIGKDD international conference
-  on Knowledge discovery and data mining}. ACM, 2014.
+\newblock In {\em VLDBJ}, 2014.
 
 \bibitem{crotty2014tupleware}
 A.~Crotty, A.~Galakatos, and T.~Kraska.
 \newblock Tupleware: Distributed machine learning on small clusters.
-\newblock {\em {IEEE} Data Eng. Bull.}, 37(3), 2014.
+\newblock In {\em IEEE Data Eng. Bull.}, 2014.
 
 \bibitem{gokhale2014corleone}
 C.~Gokhale, S.~Das, A.~Doan, J.~F. Naughton, N.~Rampalli, J.~Shavlik, and
@@ -40,16 +18,33 @@ C.~Gokhale, S.~Das, A.~Doan, J.~F. Naughton, N.~Rampalli, J.~Shavlik, and
 \newblock Corleone: Hands-off crowdsourcing for entity matching.
 \newblock In {\em SIGMOD}, 2014.
 
+\bibitem{DBLP:journals/pvldb/HaasKWF015}
+D.~Haas, S.~Krishnan, J.~Wang, M.~J. Franklin, and E.~Wu.
+\newblock Wisteria: Nurturing scalable data cleaning infrastructure.
+\newblock In {\em VLDB}, 2015.
+
 \bibitem{tensor}
 G.~Inc.
 \newblock Tensorflow.
 \newblock \url{https://www.tensorflow.org/}.
 
+\bibitem{krishnan2015svc}
+S.~Krishnan, J.~Wang, M.~J. Franklin, K.~Goldberg, and T.~Kraska.
+\newblock Stale view cleaning: Getting fresh answers from stale materialized
+  views.
+\newblock In {\em VLDB}, 2015.
+
+\bibitem{DBLP:journals/debu/KrishnanWFGKM015}
+S.~Krishnan, J.~Wang, M.~J. Franklin, K.~Goldberg, T.~Kraska, T.~Milo, and
+  E.~Wu.
+\newblock Sampleclean: Fast and reliable analytics on dirty data.
+\newblock {\em {IEEE} Data Eng. Bull.}, 38(3):59--75, 2015.
+
 \bibitem{activecleanarxiv}
 S.~Krishnan, J.~Wang, E.~Wu, M.~J. Franklin, and K.~Goldberg.
 \newblock Activeclean: Interactive data cleaning while learning convex loss
   models.
-\newblock \url{http://sampleclean.org/activeclean.pdf}.
+\newblock \url{http://arxiv.org/abs/1601.03797v1}.
 
 \bibitem{DBLP:conf/case/MahlerKLSMKPWFAG14}
 J.~Mahler, S.~Krishnan, M.~Laskey, S.~Sen, A.~Murali, B.~Kehoe, S.~Patil,
@@ -67,12 +62,13 @@ P.~Spark.
 \bibitem{van2008visualizing}
 L.~Van~der Maaten and G.~Hinton.
 \newblock Visualizing data using t-sne.
-\newblock {\em Journal of Machine Learning Research}, 9(2579-2605):85, 2008.
+\newblock In {\em JMLR}, 2008.
 
-\bibitem{openrefine}
-R.~Verborgh and M.~De~Wilde.
-\newblock {\em Using OpenRefine}.
-\newblock Packt Publishing Ltd, 2013.
+\bibitem{wang1999sample}
+J.~Wang, S.~Krishnan, M.~J. Franklin, K.~Goldberg, T.~Kraska, and T.~Milo.
+\newblock A sample-and-clean framework for fast and accurate query processing
+  on dirty data.
+\newblock In {\em SIGMOD}, 2014.
 
 \bibitem{xiaofeature}
 H.~Xiao, B.~Biggio, G.~Brown, G.~Fumera, C.~Eckert, and F.~Roli.
@@ -83,11 +79,11 @@ H.~Xiao, B.~Biggio, G.~Brown, G.~Fumera, C.~Eckert, and F.~Roli.
 M.~Yakout, L.~Berti{-}Equille, and A.~K. Elmagarmid.
 \newblock Don't be scared: use scalable automatic repairing with maximal
   likelihood and bounded changes.
-\newblock In {\em SIGMOD Conference}, 2013.
+\newblock In {\em SIGMOD}, 2013.
 
 \bibitem{DBLP:journals/pvldb/YakoutENOI11}
 M.~Yakout, A.~K. Elmagarmid, J.~Neville, M.~Ouzzani, and I.~F. Ilyas.
 \newblock Guided data repair.
-\newblock {\em {PVLDB}}, 4(5), 2011.
+\newblock In {\em VLDB}, 2011.
 
 \end{thebibliography}

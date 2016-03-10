@@ -36,7 +36,7 @@ Determining the effects and interaction between dirty data, model error, and cou
 
 As it stands, there are two key problems in ML over dirty data, (1) correctness, and (2) dirty data identification.
 We address these two problems in a system called \sys which facilitates interactive training-cleaning iteration in a safe way (with expected monotone convergence guarantees) and automatically selects the most valuable data for the analyst to inspect.
-\sys is implements the algorithms proposed in our prior work~\cite{activecleanarxiv}.
+\sys builds on the algorithms described in our prior work~\cite{krishnan2015svc, wang1999sample, DBLP:journals/pvldb/HaasKWF015, DBLP:journals/debu/KrishnanWFGKM015} and the details of the approach can be found in~\cite{activecleanarxiv}.
 The selection technique applied in \sys uses pointwise gradients to generalize the outlier filtering heuristics to select potentially dirty data even in complex models. 
 The analyst initializes an \sys with an ML model, a featurization function, and the base data, and the \sys initially returns the model trained on the dataset.
 \sys also returns an set of data sampled from the model that are possibly dirty.
