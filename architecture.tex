@@ -11,9 +11,7 @@ In contrast, \sys explores how to control the impact of data cleaning for downst
 This new problem setting leads a question of correctness -- if I incrementally clean subsets of my data, is the model I then train even correct?  
 It also leads to optimization opportunities -- how can the data cleaning step be made aware of the subsequent data analysis (e.g., the model that is trained) 
 in such a way that the model will most quickly converge to the correct model?
-Existing approaches, which are designed for homogeneous (all clean or all dirty) data, cannot be applied here.
 One of the primary contributions of this work is an incremental model update algorithm with correctness guarantees for the resulting mixture of dirty and clean data.
-The essence of the approach is to model the human's iterative process as a Stochastic Gradient Descent loop.
 
 \subsection{Problem Setup and Formalization}
 We assume that there is a featurizer $F(\cdot)$ that maps every record in a dataset $r \in R$ to a feature vector $x$ and label $y$.
@@ -23,10 +21,6 @@ For these labeled training examples $\{(x_{i},y_{i})\}_{i=1}^{N}$, the problem i
  \theta^{*}=\arg\min_{\theta}\sum_{i=1}^{N}\ell(x_{i},y_{i};\theta)
 \]
 Where $\phi$ is a convex function in $\theta$.
-For example, in a linear regression $\phi$ is:
-\[
-\ell(x_{i},y_{i},\theta) = \|\theta^Tx_{i} - y_i \|_2^2
-\]
 Typically, a \emph{regularization} term $r(\theta)$ is added to this problem.
 $r(\theta)$ penalizes high or low values of feature weights in $\theta$ to avoid overfitting to noise in the training examples.
 \begin{equation}
@@ -60,7 +54,7 @@ Alternatively, the user can clean data until the model is of sufficient accuracy
 
 \noindent\textbf{Cleaning Function: } We represent this operation as $C(\cdot)$ which can be applied to a record $r$ (or a set of records) to recover the clean record $r' = C(r)$.
 Formally, we treat the $C(\cdot)$ as an expensive user-defined function (implemented as code or manual inspection) composed of deterministic schema-preserving \textsf{map} and \textsf{filter} operations applied to a subset of rows in the relation. 
-This formulation supports common operations such as extraction, deletion, transformation, and find-and-replace.
+%This formulation supports common operations such as extraction, deletion, transformation, and find-and-replace.
 
 \subsection{Basic Data Flow} \label{df}
 The following pseudocode summarizes how \sys works:
@@ -103,10 +97,7 @@ Ideally, we would like to be able to solve the following problem:
 This minimization problem can be solved with an algorithm called Stochastic Gradient Descent, which iteratively samples data, estimates a gradient, and updates the current best model.
 We can represent the iterative cleaning process similarly where the gradient is estimated from newly cleaned batches of data:
 \[
-\theta^{(0)} \leftarrow \theta_d^{*}
-\]
-\[
-\theta^{(t+1)} = \theta^{(t)} - \lambda \cdot \mathbf{w}
+\theta^{(0)} \leftarrow \theta_d^{*}~~~~\theta^{(t+1)} = \theta^{(t)} - \lambda \cdot \mathbf{w}
 \]
 where $\mathbf{w}$ is an unbiased estimate of the gradient with $\mathbf{E}[\mathbf{w}]=\sum_i^N\nabla \ell(C(x_i,y_i);\theta^{(t)})$.
 If iterated to infinity, this procedure will converge to the correct value $\theta_c^*$ with rate $O(\frac{1}{t})$ for strongly convex functions and $O(\frac{1}{\sqrt{t}})$ for general convex functions and avoids the pitfalls of Simpson's paradox.
@@ -115,15 +106,11 @@ There are some subtleties which we discuss in the technical report such as re-sa
   \vspace{0.5em}
 
   \noindent\textbf{Sampler (Importance Sampling): } We use an importance sampling technique to select a sample of likely dirty records. The necessary conditions for convergence are $\mathbf{E}[\mathbf{w}]=\sum_i^N\nabla \ell(C(x_i);\theta^{(t)})$ and there is nothing that enforces that we must uniformly sample the data.
-We can apply a technique called importance sampling which allows us to calculate expectations with respect to one distribution $q(\cdot)$ while sampling from another with the same support $p(\cdot)$. 
-\[\mathbf{E}_{X~q}[X] = \sum_{x \in X} x \frac{q(x)}{p(x)} \]
-What this means for our problem is that we can define any sampling distribution $p(\cdot)$ over $X$ as long as $p(\cdot) > 0$:
+We can apply a technique called importance sampling which allows us to calculate expectations with respect to one distribution $q(\cdot)$ while sampling from another with the same support $p(\cdot)$, e.g., $\mathbf{E}_{X~q}[X] = \sum_{x \in X} x \frac{q(x)}{p(x)}$, which leads the the following:
 \[
 \mathbf{w} = \frac{|X|}{b} \sum_{i=1}^{b} \frac{1}{p(i)} \nabla\ell(C(x_i,y_i);\theta^{(t)})
 \]
 While all of the distributions will have the same expected values, their variances will differ.
-We can show that an approximation for the distribution that minimizes the variance is simply:
-\[
-p(i) \propto \|\nabla\ell(x_i,y_i;\theta^{(t)})\|
-\]
+We can show that an approximation for the distribution that minimizes the variance is simply: 
+$p(i) \propto \|\nabla\ell(x_i,y_i;\theta^{(t)})\|$.
 

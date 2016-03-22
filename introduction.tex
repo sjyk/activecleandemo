@@ -1,5 +1,5 @@
 \section{Introduction}\sloppy
-Model training on large and growing datasets is a key data management challenge with significant interest in both industry and academia~\cite{bdas, alexandrov2014stratosphere, crotty2014tupleware, tensor}.
+Model training on large and growing datasets is a key data management challenge with significant interest in both industry and academia~\cite{bdas, crotty2014tupleware, tensor}.
 While many scalable training frameworks abstract much of the crucial details of distributed Machine Learning (ML), they seldom offer the analyst support regarding constructing the model itself, such as which features to use or how to represent their data.
 The model construction process is still highly iterative often through trial-and-error. 
 To further complicate matters, data are often \emph{dirty}, including missing, incorrect, or inconsistent attributes, due to faulty sensors, software, time delays, or hardware.
@@ -12,14 +12,14 @@ For instance, in one fraud prediction example, we found that applying Entity Res
 Despite this importance, in theory and practice, the academic community has decoupled the data cleaning problem from featurization and ML.
 This disconnect is problematic because many ML techniques often make assumptions about independent and identically distributed data, which can be easily violated if the analyst applies data cleaning in an arbitrary way.
 
-To understand how this may happen, consider an analyst training a regression model on dirty data. 
+Consider an analyst training a regression model on dirty data. 
 At first, she may not realize that there are outliers and train a preliminary model directly on the dirty data. 
 As she starts to inspect the model and the data, she will soon realize that some records have large residual errors (i.e., not predicted accurately). 
 Once she confirms that those records are indeed dirty, she has to design rules or scripts to fix or remove the offending records. 
 After cleaning, she re-trains the model--iterating until she no longer finds dirty data.
 This iterative process is the de facto standard, and is in fact encouraged by the design of the increasingly popular interactive ``notebook" ML development environments (e.g., IPython).
-However, this makes the implicit assumption that model training commutes with incremental data cleaning, and the models trained on partially clean data have meaningful predictive value.
-This assumption is often incorrect; due to the well-known Simpson's paradox, models trained on a mix of dirty and clean data can have very misleading results even in simple scenarios (Figure \ref{update-arch1}).
+This makes the implicit assumption that the models trained on partially clean data have meaningful predictive value.
+However, due to the well-known Simpson's paradox, models trained on a mix of dirty and clean data can have very misleading results even in simple scenarios (Figure \ref{update-arch1}).
 
 \begin{figure}[t]
 \centering

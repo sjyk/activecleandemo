@@ -22,6 +22,7 @@
 \usepackage{amsfonts}
 \usepackage{xspace}
 \usepackage{amsmath}
+\usepackage{amstext}
 \usepackage{multirow}
 \usepackage[mathscr]{eucal}
 %\usepackage{psfrag}
@@ -33,20 +34,26 @@
 \usepackage{csquotes}
 \usepackage{enumitem}
 
-\lstset{basicstyle=\large,breaklines=true,language=SQL,belowcaptionskip=.1\baselineskip}
+%\lstset{basicstyle=\large,breaklines=true,language=SQL,belowcaptionskip=.1\baselineskip}
 
-\linespread{0.975}
+%\linespread{0.975}
 
-\makeatletter
-\def\@copyrightspace{\relax}
-\makeatother
+%\makeatletter
+%\def\@copyrightspace{\relax}
+%\makeatother
 
 \begin{document}
 
-%\setlength{\belowdisplayskip}{1pt} \setlength{\belowdisplayshortskip}{1pt}
-%\setlength{\abovedisplayskip}{1pt} \setlength{\abovedisplayshortskip}{1pt}
-%\setlength{\belowcaptionskip}{-10pt}
-%\selectfont
+\CopyrightYear{2016} 
+\setcopyright{acmcopyright}
+\conferenceinfo{SIGMOD'16,}{June 26-July 01, 2016, San Francisco, CA, USA}
+\isbn{978-1-4503-3531-7/16/06}\acmPrice{\$15.00}
+\doi{http://dx.doi.org/10.1145/2882903.2899409}
+
+\setlength{\belowdisplayskip}{2pt} \setlength{\belowdisplayshortskip}{2pt}
+\setlength{\abovedisplayskip}{2pt} \setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowcaptionskip}{-10pt}
+\selectfont
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Example}
@@ -121,13 +128,28 @@
 \pagestyle{plain}
 
 %\title{ActiveClean: Progressive Data Cleaning For Convex Data Analytics}
-\title{ActiveClean:  An Interactive Data Cleaning Framework For\\Modern Machine Learning}
+\title{ActiveClean:  An Interactive Data Cleaning Framework \\ For Modern Machine Learning}
 
-\numberofauthors{1}
-\author{\large Sanjay Krishnan{$\,^*$}, Michael J. Franklin{$\,^*$}, Ken Goldberg{$\,^*$}, Jiannan Wang{$\,^{**}$}, Eugene Wu{$\,^\dag$}\\
-\vspace{.2em}\affaddr{\large $\,^*$UC Berkeley,~~ $^\dag$Columbia University, ~~ $^{**}$Simon Fraser University} \\
-\vspace{.1em}\affaddr{\large \{sanjaykrishnan, franklin, goldberg\}@berkeley.edu, ewu@cs.columbia.edu, jnwang@sfu.edu.ca}\\
+\numberofauthors{5}
+\author{
+\alignauthor Sanjay Krishnan \\
+\affaddr{UC Berkeley} \\
+\email{sanjay@eecs.berkeley.edu}\\
+\alignauthor Michael J. Franklin\\
+\affaddr{UC Berkeley}\\
+\email{franklin@berkeley.edu}\\
+\alignauthor Ken Goldberg\\
+\affaddr{UC Berkeley}\\
+\email{goldberg@berkeley.edu}
+\and
+\alignauthor Jiannan Wang \\
+\affaddr{Simon Fraser University} \\
+\email{jnwang@sfu.ca}
+\alignauthor Eugene Wu \\
+\affaddr{Columbia University} \\
+\email{ewu@cs.columbia.edu}
 }
+
 
 %\fontsize{9pt}{11pt}
 %\selectfont
@@ -144,7 +166,7 @@
 Databases can be corrupted with various errors such as missing, incorrect, or inconsistent values.
 Increasingly, modern data analysis pipelines involve Machine Learning, and the effects of  dirty data can be difficult to debug.
 Dirty data is often sparse, and naive sampling solutions are not suited for high-dimensional models.
-We propose \sysfull, an anytime framework for training Machine Learning models with data cleaning.
+We propose \sysfull, a progressive framework for training Machine Learning models with data cleaning.
 Our framework updates a model iteratively as the analyst cleans small batches of data, and includes numerous optimizations such as importance weighting and dirty data detection.
 We designed a visual interface to wrap around this framework and demonstrate \sys for a video classification problem and a topic modeling problem. 
 \end{abstract}

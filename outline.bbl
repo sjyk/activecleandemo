@@ -1,11 +1,9 @@
 \begin{thebibliography}{10}
 
-\bibitem{alexandrov2014stratosphere}
-A.~Alexandrov, R.~Bergmann, S.~Ewen, J.~Freytag, F.~Hueske, A.~Heise, O.~Kao,
-  M.~Leich, U.~Leser, V.~Markl, F.~Naumann, M.~Peters, A.~Rheinl{\"{a}}nder,
-  M.~J. Sax, S.~Schelter, M.~H{\"{o}}ger, K.~Tzoumas, and D.~Warneke.
-\newblock The stratosphere platform for big data analytics.
-\newblock In {\em VLDBJ}, 2014.
+\bibitem{bdas}
+U.~Berkeley.
+\newblock Berkeley data analytics stack.
+\newblock \url{https://amplab.cs.berkeley.edu/software/}.
 
 \bibitem{crotty2014tupleware}
 A.~Crotty, A.~Galakatos, and T.~Kraska.
@@ -58,11 +56,6 @@ P.~Spark.
 \newblock Pyspark.
 \newblock
   \url{https://spark.apache.org/docs/0.9.0/python-programming-guide.html}.
-
-\bibitem{bdas}
-A.~UC~Berkeley.
-\newblock Berkeley data analytics stack.
-\newblock \url{https://amplab.cs.berkeley.edu/software/}.
 
 \bibitem{van2008visualizing}
 L.~Van~der Maaten and G.~Hinton.
